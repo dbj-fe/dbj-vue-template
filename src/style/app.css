@@ -1,0 +1,335 @@
+.search-input {
+  width: 232px;
+}
+
+.search-input .el-button,
+.search-switch-input .el-button {
+  width: 36px;
+}
+
+.search-input .icon-search,
+.search-switch-input .icon-search {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-left: -7px;
+}
+
+.search-switch-input .el-select{
+  vertical-align: middle;
+  width: 110px;
+}
+
+.search-switch-input .el-button.el-button--default.el-button--small,
+.search-input .el-button.el-button--default.el-button--small {
+  min-width: 0;
+}
+
+.search-switch-input .el-input-group__append:hover {
+  background-color: #f5f5f5;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fixed-header-table.el-table {
+  width: 100%;
+  padding-top: 48px;
+}
+
+.fixed-header-table.el-table .el-table__header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.fixed-header-table.el-table .el-table__body-wrapper {
+  overflow: auto;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.layout-container {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.layout-header {
+  height: 68px;
+  width: 100%;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+  position: relative;
+}
+
+.layout-header-left,
+.layout-header-right {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.layout-header-left > * + *,
+.layout-header-left > .el-button + .el-button {
+  margin-left: 16px;
+}
+
+.layout-header-left > .el-select {
+  width: 140px;
+}
+
+.layout-header-right > * {
+  margin-left: 16px;
+}
+
+.layout-header-right {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  max-width: 50%;
+  transform: translate(0, -50%);
+  justify-content: flex-end;
+}
+
+.layout-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: auto;
+}
+
+.layout-body.horizontal{
+  flex-flow: row nowrap;
+}
+
+.layout-side {
+  width: 240px;
+  height: 100%;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #fff;
+}
+
+.layout-side-top {
+  flex: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.layout-side-top > :not(:first-child) {
+  margin-top: 16px;
+  margin-left: 0;
+}
+
+.layout-side-body {
+  overflow-y: auto;
+  padding: 12px 0;
+}
+
+.layout-main {
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  background: #fff;
+}
+
+.el-dialog .el-form {
+  margin: 24px 40px 12px 20px;
+}
+
+.el-dialog .el-form-item__content > * {
+  width: 100%;
+}
+
+.el-button i{
+  font-size: 20px;
+  vertical-align: -4px;
+}
+
+/*List样式 Start*/
+
+.list-item {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  height: 160px;
+}
+
+.list-item + .list-item {
+  margin-top: 20px;
+}
+
+.list-item-pic {
+  flex: none;
+}
+
+.list-item-info {
+  padding: 16px;
+  flex: 4;
+}
+
+.list-item-oper {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.list-item-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/*List样式 End*/
+
+/*Form样式 Start*/
+
+.form-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.form-header {
+  height: 32px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.form-body {
+  padding: 32px;
+}
+
+.form-section {
+  background: #fff;
+  width: 1024px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.03);
+}
+
+.form-section + .form-section {
+  margin-top: 24px;
+}
+
+.form-section-header {
+  height: 48px;
+  background: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.form-section-header .tip {
+  font-size: 12px;
+  color: #999;
+  margin-left: 12px;
+}
+
+.form-section-body {
+  padding: 40px 80px 24px 0;
+}
+
+.form-body .el-input{
+  width: 320px;
+}
+
+.form-btns-wrapper {
+  margin: 40px 0 8px;
+}
+
+/*Form样式 End*/
+
+/*Detail样式 Start*/
+.detail-container {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+
+.detail-header {
+  flex: none;
+  height: 32px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.detail-info {
+  background: #fff;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 16px;
+  position: relative;
+}
+
+.detail-info > h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.detail-info-list {
+  color: #999;
+  line-height: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.detail-info-list.horizonal {
+  flex-flow: row nowrap;
+}
+
+.detail-info-list.horizonal > li + li:before {
+  content: " ";
+  display: inline-block;
+  vertical-align: middle;
+  height: 14px;
+  width: 1px;
+  background: #ccc;
+  margin: 0 16px;
+}
+
+.detail-info-btns {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.detail-body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+}
+/*Detail样式 End*/
+/*表单中某一项有多个input，并且横向排列 Start*/
+.form-items-horizonal {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-items-horizonal li + li {
+  margin-left: 12px;
+}
+
+.form-items-horizonal li > .el-input {
+  width: 100%;
+}
+/*表单中某一项有多个input，并且横向排列 End*/

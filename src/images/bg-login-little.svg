@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="720px" height="460px" viewBox="0 0 720 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-login-little</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="2.61501736%" y1="0%" x2="100%" y2="98.4247622%" id="linearGradient-1">
+            <stop stop-color="#4D4D4D" offset="0%"></stop>
+            <stop stop-color="#333333" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="720" height="460"></rect>
+        <filter x="-3.8%" y="-4.6%" width="107.5%" height="111.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg-login-little">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <g id="Mask">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <g id="Group-24" opacity="0.239999995" mask="url(#mask-3)">
+                <g transform="translate(-101.000000, 276.000000)">
+                    <path d="M178.451705,417.741318 L356.346437,313.958447 L356.346437,105.52776 L178.673219,3.15412114 L1,105.52776 L1,314.623525 L178.451705,417.741318 Z" id="Combined-Shape" stroke-opacity="0.08" stroke="#FFFFFF" stroke-width="2" fill="none" fill-rule="nonzero"></path>
+                    <path d="M179.502457,3.33904437 L179.502457,213.743729" id="Path-2" stroke-opacity="0.08" stroke="#FFFFFF" stroke-width="2" fill="none"></path>
+                    <g id="Group-Copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(81.375921, 63.147679)">
+                        <polygon id="Combined-Shape" fill="#575757" fill-rule="nonzero" points="81.9803948 0.582855969 90.6790336 5.26644112 8.47057441 56.8720552 0.314979094 51.8475794 81.9803948 0.582855969"></polygon>
+                        <polygon id="Combined-Shape-Copy-3" fill="#2B2B2B" points="82.3571931 20.3646254 82.3571931 155.381103 74.6346454 150.634235 74.6346454 15.617757"></polygon>
+                        <path d="M15.9473135,19.6467002 L16.1580113,136.760195 L82.7091803,177.87803 L82.7091803,61.5403192 L15.9473135,19.6467002 Z M7.96068796,5.23680686 L90.6698682,57.137496 L90.6698682,192.153974 L8.20530575,141.204242 L7.96068796,5.23680686 Z" id="Rectangle-8-Copy-6" fill="#2E2E2E" fill-rule="nonzero" transform="translate(49.315278, 98.695390) scale(-1, 1) translate(-49.315278, -98.695390) "></path>
+                    </g>
+                    <g id="Group-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(137.100737, 94.854430)">
+                        <polygon id="Combined-Shape" fill="#575757" fill-rule="nonzero" points="90.3876255 5.33292283 8.16048763 56.2208536 0.00489231138 51.1963778 81.6889867 0.64933768"></polygon>
+                        <polygon id="Rectangle-8-Copy-6" fill="#2E2E2E" transform="translate(49.192969, 98.286903) scale(-1, 1) translate(-49.192969, -98.286903) " points="7.96068796 5.30379747 90.4252504 56.2535297 90.4252504 191.270008 7.96068796 140.320275"></polygon>
+                        <polygon id="Combined-Shape" fill="#1F1F1F" points="7.72254772 55.9392215 7.72254772 190.955699 0 186.208831 9.42734834e-15 51.1923531"></polygon>
+                    </g>
+                    <g id="Group-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(192.000000, 127.000000)">
+                        <polygon id="Combined-Shape" fill="#575757" fill-rule="nonzero" points="90.439126 5.32290208 8.47057441 55.988089 0.314979094 50.9636132 81.7404872 0.639316932"></polygon>
+                        <polygon id="Rectangle-8-Copy-6" fill="#2E2E2E" transform="translate(49.192969, 71.767915) scale(-1, 1) translate(-49.192969, -71.767915) " points="7.96068796 5.30379747 90.4252504 56.2535297 90.4252504 138.232033 7.96068796 87.2823007"></polygon>
+                        <polygon id="Combined-Shape" fill="#1F1F1F" points="7.72254772 55.9392215 7.72254772 137.917725 0 133.170856 9.42734834e-15 51.1923531"></polygon>
+                    </g>
+                    <polyline id="Path-3" stroke="#8C8C8C" stroke-width="2" fill="none" opacity="0.049999997" stroke-dasharray="13.74409387386988" points="5.27588709 108.228928 8.09267613 109.845605 179.901668 208.454184 179.901668 417.939355"></polyline>
+                    <path d="M179.897176,208.087099 L350.689136,108.902662" id="Path-4" stroke-opacity="0.1" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-dasharray="13.74409387386988"></path>
+                    <path d="M355.461916,108.727848 C353.507887,108.727848 351.923833,107.144787 351.923833,105.191983 C351.923833,103.239179 353.507887,101.656118 355.461916,101.656118 C357.415946,101.656118 359,103.239179 359,105.191983 C359,107.144787 357.415946,108.727848 355.461916,108.727848 Z M179.55774,7.07172996 C177.60371,7.07172996 176.019656,5.48866928 176.019656,3.53586498 C176.019656,1.58306067 177.60371,0 179.55774,0 C181.511769,0 183.095823,1.58306067 183.095823,3.53586498 C183.095823,5.48866928 181.511769,7.07172996 179.55774,7.07172996 Z" id="Combined-Shape" stroke="none" fill="#595959" fill-rule="evenodd"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
