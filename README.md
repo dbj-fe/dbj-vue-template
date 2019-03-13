@@ -1,6 +1,6 @@
 # 打扮家项目模板
 
-> 使用方法：
+使用方法：
 
 ``` bash
 # 1.全局安装打扮家的前端脚手架
@@ -13,5 +13,6 @@ dbj
 dbj init project-name
 ```
 
-创建项目开始会提问一些问题，请按照实际使用填写，填写完成后就能创建一个名称是project-name的vue项目了，这个vue是以原来的vue-demo项目为模板的，进入目录中npm install、npm start就可以访问项目了
+> 创建项目开始会提问一些问题，请按照实际使用填写，填写完成后就能创建一个名称是project-name的vue项目了
+> 进入目录中npm install、npm start就可以访问项目了
 
