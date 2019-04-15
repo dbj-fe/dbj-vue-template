@@ -3,7 +3,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -16,16 +16,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -108,6 +103,8 @@
 /* Footer
 --------------------------*/
 /* Main
+--------------------------*/
+/* Timeline
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -122,7 +119,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -135,16 +132,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -227,6 +219,8 @@
 /* Footer
 --------------------------*/
 /* Main
+--------------------------*/
+/* Timeline
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -250,11 +244,11 @@
     position: relative;
     width: 100%; }
     .el-step__head.is-process {
-      color: #333;
-      border-color: #333; }
+      color: #333333;
+      border-color: #333333; }
     .el-step__head.is-wait {
-      color: #ccc;
-      border-color: #ccc; }
+      color: #CCCCCC;
+      border-color: #CCCCCC; }
     .el-step__head.is-success {
       color: #47C677;
       border-color: #47C677; }
@@ -262,8 +256,8 @@
       color: #FF5A47;
       border-color: #FF5A47; }
     .el-step__head.is-finish {
-      color: #ffa800;
-      border-color: #ffa800; }
+      color: #FFA800;
+      border-color: #FFA800; }
   .el-step__icon {
     position: relative;
     z-index: 1;
@@ -281,7 +275,7 @@
     font-size: 14px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background: #fff;
+    background: #FFFFFF;
     -webkit-transition: .15s ease-out;
     transition: .15s ease-out; }
     .el-step__icon.is-text {
@@ -309,7 +303,7 @@
   .el-step__line {
     position: absolute;
     border-color: inherit;
-    background-color: #ccc; }
+    background-color: #CCCCCC; }
   .el-step__line-inner {
     display: block;
     border-width: 1px;
@@ -329,15 +323,15 @@
     line-height: 38px; }
     .el-step__title.is-process {
       font-weight: bold;
-      color: #333; }
+      color: #333333; }
     .el-step__title.is-wait {
-      color: #ccc; }
+      color: #CCCCCC; }
     .el-step__title.is-success {
       color: #47C677; }
     .el-step__title.is-error {
       color: #FF5A47; }
     .el-step__title.is-finish {
-      color: #ffa800; }
+      color: #FFA800; }
   .el-step__description {
     padding-right: 10%;
     margin-top: -5px;
@@ -345,15 +339,15 @@
     line-height: 20px;
     font-weight: normal; }
     .el-step__description.is-process {
-      color: #333; }
+      color: #333333; }
     .el-step__description.is-wait {
-      color: #ccc; }
+      color: #CCCCCC; }
     .el-step__description.is-success {
       color: #47C677; }
     .el-step__description.is-error {
       color: #FF5A47; }
     .el-step__description.is-finish {
-      color: #ffa800; }
+      color: #FFA800; }
   .el-step.is-horizontal {
     display: inline-block; }
     .el-step.is-horizontal .el-step__line {
@@ -452,7 +446,7 @@
         position: absolute;
         height: 15px;
         width: 1px;
-        background: #ccc; }
+        background: #CCCCCC; }
       .el-step.is-simple .el-step__arrow::before {
         -webkit-transform: rotate(-45deg) translateY(-4px);
         transform: rotate(-45deg) translateY(-4px);

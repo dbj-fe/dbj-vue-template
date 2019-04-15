@@ -1,0 +1,38 @@
+{
+  "eslint.options": {
+    "extensions": [
+      ".html",
+      ".js",
+      ".vue",
+      ".jsx"
+    ]
+  },
+  // An array of language ids which should be validated by ESLint
+  "eslint.validate": [
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    }
+  ],
+  // #每次保存的时候自动格式化
+  "editor.formatOnSave": true,
+  // #每次保存的时候将代码按eslint格式进行修复
+  "eslint.autoFixOnSave": false,
+  // Always show the ESlint status bar item.
+  "eslint.alwaysShowStatus": true,
+  // Default formatter for <template> region
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.validation.template": false
+}

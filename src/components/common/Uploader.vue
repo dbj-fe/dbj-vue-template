@@ -9,7 +9,7 @@
     :show-file-list="false"
     :accept="acceptType"
   >
-    <slot v-if="$slots.default"></slot>
+    <slot v-if="$slots.default" />
     <div
       v-else-if="type == 'image'"
       class="uploader-img-wrapper"
@@ -18,14 +18,18 @@
       <img
         v-if="imageSrc"
         :src="imageSrc"
-      />
+      >
       <div class="uploader-tip-wrapper">
         <i>+</i>
-        <div class="title">{{btnText2}}</div>
+        <div class="title">
+          {{ btnText2 }}
+        </div>
         <div
           v-if="tip"
           class="tip"
-        >{{tip}}</div>
+        >
+          {{ tip }}
+        </div>
       </div>
     </div>
     <template v-else>
@@ -33,12 +37,14 @@
         class="uploader-btn"
         href="javascript:void(0)"
       >
-        <i class="icon-upload"></i>上传文件</a>
+        <i class="icon-upload" />上传文件</a>
       <div
         v-if="tip"
         slot="tip"
         class="uploader-tip"
-      >{{tip}}</div>
+      >
+        {{ tip }}
+      </div>
     </template>
   </el-upload>
 </template>
@@ -57,13 +63,13 @@ export default {
   props: [
     "type",
     "prefix",
-    "file-type",
-    "max-size",
+    "fileType",
+    "maxSize",
     "tip",
     "md5",
     "accept",
-    "btn-text",
-    "file-url"
+    "btnText",
+    "fileUrl"
   ],
   data() {
     return {
@@ -101,6 +107,11 @@ export default {
       if (val) {
         this.imageSrc = val;
       }
+    }
+  },
+  mounted() {
+    if (this.fileUrl) {
+      this.imageSrc = this.fileUrl;
     }
   },
   methods: {
@@ -188,11 +199,6 @@ export default {
       } else {
         this.$emit("success", this.accessServerUrl, this.fileKey, this.size);
       }
-    }
-  },
-  mounted() {
-    if (this.fileUrl) {
-      this.imageSrc = this.fileUrl;
     }
   }
 };

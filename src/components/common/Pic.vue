@@ -1,7 +1,18 @@
 <template>
-  <div class="pic-wrapper" :style="containerStyle">
-    <img v-if="src" :src="src" :style="imgStyle" />
-    <img v-else src="../../images/no-pic@2x.png" :style="imgStyle" />
+  <div
+    class="pic-wrapper"
+    :style="containerStyle"
+  >
+    <img
+      v-if="src"
+      :src="src"
+      :style="imgStyle"
+    >
+    <img
+      v-else
+      src="../../images/no-pic@2x.png"
+      :style="imgStyle"
+    >
   </div>
 </template>
 

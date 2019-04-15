@@ -224,105 +224,71 @@
 --------------------------*/
 /* Break-point
 --------------------------*/
-.el-carousel {
-  overflow-x: hidden;
-  position: relative; }
-  .el-carousel__container {
+.el-timeline-item {
+  position: relative;
+  padding-bottom: 20px; }
+  .el-timeline-item__wrapper {
     position: relative;
-    height: 300px; }
-  .el-carousel__arrow {
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    height: 36px;
-    width: 36px;
-    cursor: pointer;
-    -webkit-transition: .3s;
-    transition: .3s;
-    border-radius: 50%;
-    background-color: rgba(31, 45, 61, 0.11);
+    padding-left: 28px;
+    top: -3px; }
+  .el-timeline-item__tail {
+    position: absolute;
+    left: 4px;
+    height: 100%;
+    border-left: 2px solid #F2F2F2; }
+  .el-timeline-item__icon {
     color: #FFFFFF;
+    font-size: 13px; }
+  .el-timeline-item__node {
     position: absolute;
-    top: 50%;
-    z-index: 10;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    text-align: center;
-    font-size: 12px; }
-    .el-carousel__arrow--left {
-      left: 16px; }
-    .el-carousel__arrow--right {
-      right: 16px; }
-    .el-carousel__arrow:hover {
-      background-color: rgba(31, 45, 61, 0.23); }
-    .el-carousel__arrow i {
-      cursor: pointer; }
-  .el-carousel__indicators {
+    background-color: #F2F2F2;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .el-timeline-item__node--normal {
+      left: -1px;
+      width: 12px;
+      height: 12px; }
+    .el-timeline-item__node--large {
+      left: -2px;
+      width: 14px;
+      height: 14px; }
+    .el-timeline-item__node--primary {
+      background-color: #FFA800; }
+    .el-timeline-item__node--success {
+      background-color: #47C677; }
+    .el-timeline-item__node--warning {
+      background-color: #FF7E43; }
+    .el-timeline-item__node--danger {
+      background-color: #FF5A47; }
+    .el-timeline-item__node--info {
+      background-color: #999999; }
+  .el-timeline-item__dot {
     position: absolute;
-    list-style: none;
-    bottom: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    margin: 0;
-    padding: 0;
-    z-index: 2; }
-    .el-carousel__indicators--outside {
-      bottom: 26px;
-      text-align: center;
-      position: static;
-      -webkit-transform: none;
-      transform: none; }
-      .el-carousel__indicators--outside .el-carousel__indicator:hover button {
-        opacity: 0.64; }
-      .el-carousel__indicators--outside button {
-        background-color: #CCCCCC;
-        opacity: 0.24; }
-    .el-carousel__indicators--labels {
-      left: 0;
-      right: 0;
-      -webkit-transform: none;
-      transform: none;
-      text-align: center; }
-      .el-carousel__indicators--labels .el-carousel__button {
-        height: auto;
-        width: auto;
-        padding: 2px 18px;
-        font-size: 12px; }
-      .el-carousel__indicators--labels .el-carousel__indicator {
-        padding: 6px 4px; }
-  .el-carousel__indicator {
-    display: inline-block;
-    background-color: transparent;
-    padding: 12px 4px;
-    cursor: pointer; }
-    .el-carousel__indicator:hover button {
-      opacity: 0.72; }
-    .el-carousel__indicator.is-active button {
-      opacity: 1; }
-  .el-carousel__button {
-    display: block;
-    opacity: 0.48;
-    width: 30px;
-    height: 2px;
-    background-color: #FFFFFF;
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    -webkit-transition: .3s;
-    transition: .3s; }
-
-.carousel-arrow-left-enter,
-.carousel-arrow-left-leave-active {
-  -webkit-transform: translateY(-50%) translateX(-10px);
-  transform: translateY(-50%) translateX(-10px);
-  opacity: 0; }
-
-.carousel-arrow-right-enter,
-.carousel-arrow-right-leave-active {
-  -webkit-transform: translateY(-50%) translateX(10px);
-  transform: translateY(-50%) translateX(10px);
-  opacity: 0; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .el-timeline-item__content {
+    color: #333333; }
+  .el-timeline-item__timestamp {
+    color: #999999;
+    line-height: 1;
+    font-size: 13px; }
+    .el-timeline-item__timestamp.is-top {
+      margin-bottom: 8px;
+      padding-top: 4px; }
+    .el-timeline-item__timestamp.is-bottom {
+      margin-top: 8px; }

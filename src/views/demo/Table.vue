@@ -5,8 +5,12 @@
         <el-button
           type="primary"
           icon="icon-new"
-        >创建按钮</el-button>
-        <el-button type="primary">主按钮2</el-button>
+        >
+          创建按钮
+        </el-button>
+        <el-button type="primary">
+          主按钮2
+        </el-button>
         <el-button>按钮</el-button>
         <el-select
           v-model="select1"
@@ -15,62 +19,62 @@
           <el-option
             :value="1"
             label="选项1"
-          ></el-option>
+          />
           <el-option
             :value="2"
             label="选项2"
-          ></el-option>
+          />
         </el-select>
       </div>
       <div class="layout-header-right">
         <!-- 搜索框组件 -->
         <el-input
+          v-model="keyword"
           class="search-input"
           placeholder="请输入姓名／电话／职务"
-          v-model="keyword"
           clearable
           @keydown.enter.native="searchPage"
         >
           <el-button
             slot="append"
-            @click="searchPage"
             icon="icon-search"
-          ></el-button>
+            @click="searchPage"
+          />
         </el-input>
         <!-- 带切换类型的搜索框组件 -->
         <el-input
+          v-model="keyword"
           class="search-switch-input"
           :placeholder="switchSearchPlaceholder"
-          v-model="keyword"
           clearable
           @keydown.enter.native="searchPage"
         >
           <el-select
-            v-model="keywordType"
             slot="prepend"
+            v-model="keywordType"
           >
             <el-option
               label="全部"
               :value="0"
-            ></el-option>
+            />
             <el-option
               label="项目名称"
               :value="1"
-            ></el-option>
+            />
             <el-option
               label="业主信息"
               :value="2"
-            ></el-option>
+            />
             <el-option
               label="创建人"
               :value="3"
-            ></el-option>
+            />
           </el-select>
           <el-button
             slot="append"
-            @click="searchPage"
             icon="icon-search"
-          ></el-button>
+            @click="searchPage"
+          />
         </el-input>
       </div>
     </div>
@@ -80,7 +84,9 @@
           <el-button
             type="primary"
             icon="icon-new"
-          >创建按钮</el-button>
+          >
+            创建按钮
+          </el-button>
           <el-button>其他按钮</el-button>
         </div>
         <div class="layout-side-body">
@@ -102,17 +108,23 @@
               slot="operBtns"
               slot-scope="{data, node}"
             >
-              <li @click="handleTreeNodeOper(data, node)">其他操作1</li>
+              <li @click="handleTreeNodeOper(data, node)">
+                其他操作1
+              </li>
               <li
                 v-if="node.level == 1"
                 @click="handleTreeNodeOper(data, node)"
-              >只一级有的按钮</li>
+              >
+                只一级有的按钮
+              </li>
             </template>
             <template
               slot="operBtns0"
               slot-scope="{data, node}"
             >
-              <li @click="handleTreeNodeOper(data, node)">有顺序要求的按钮</li>
+              <li @click="handleTreeNodeOper(data, node)">
+                有顺序要求的按钮
+              </li>
             </template>
             <template
               slot="img"
@@ -121,7 +133,8 @@
               <img
                 v-if="node.isLeaf && node.level > 1"
                 src="../../images/no-pic@2x.png"
-              > <img
+              >
+              <img
                 v-else
                 src="../../images/folder.png"
               >
@@ -129,7 +142,7 @@
           </oper-tree>
         </div>
       </div>
-      <div class=" layout-main">
+      <div class="layout-main">
         <el-table
           :data="tableData"
           size="medium"
@@ -140,30 +153,26 @@
             prop="date"
             label="日期"
             width="180"
-          >
-          </el-table-column>
+          />
           <el-table-column
             prop="name"
             label="姓名"
             width="180"
-          >
-          </el-table-column>
+          />
           <el-table-column
             prop="address"
             label="地址"
-          >
-          </el-table-column>
+          />
           <el-pagination
-            slot="append"
             v-if="pageTotal > pageSize"
+            slot="append"
             background
             layout="prev, pager, next, jumper"
             :current-page="pageNum"
             :total="pageTotal"
             :page-size="pageSize"
             @current-change="getPage"
-          >
-          </el-pagination>
+          />
         </el-table>
       </div>
     </div>
@@ -234,6 +243,9 @@ export default {
       ].concat(this.treeData);
     }
   },
+  mounted() {
+    this.requestTreeData();
+  },
   methods: {
     searchPage() {},
     getPage() {},
@@ -268,31 +280,35 @@ export default {
       }, 100);
     },
     handleTreeNodeOper(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     },
     currentChange(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     },
     moveUp(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     },
     moveDown(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     },
     rename(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     },
     append(data, node) {
       let parent = node.parent;
       let parentId = parent.data.id;
+      // eslint-disable-next-line
       console.log(data, node, parentId);
     },
     remove(data, node) {
+      // eslint-disable-next-line
       console.log(data, node);
     }
-  },
-  mounted() {
-    this.requestTreeData();
   }
 };
 </script>

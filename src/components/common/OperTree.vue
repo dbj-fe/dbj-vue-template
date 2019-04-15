@@ -11,37 +11,37 @@
     @current-change="currentChange"
   >
     <div
+      slot-scope="{data: nodeData, node}"
       class="opertree-node"
-      slot-scope="{data, node}"
     >
       <div class="opertree-node-label">
         <slot
           v-if="!noImg && $scopedSlots.img"
           name="img"
-          :data="data"
+          :data="nodeData"
           :node="node"
-        ></slot>
+        />
         <img
-          src="../../images/folder.png"
           v-else-if="!noImg"
+          src="../../images/folder.png"
         >
         <p
-          v-if="!data.isEditing"
-          @dblclick="() => beforeRename(data, node)"
+          v-if="!nodeData.isEditing"
+          @dblclick="() => beforeRename(nodeData, node)"
         >
-          <span :title="node.label">{{node.label}}</span>
+          <span :title="node.label">{{ node.label }}</span>
         </p>
         <el-input
-          :ref="`input-${data.id}`"
           v-else
-          v-model="data[labelKey]"
-          @blur="() => updateNode(data, node, false)"
-          @keydown.enter.native="() => updateNode(data, node, true)"
+          :ref="`input-${nodeData.id}`"
+          v-model="nodeData[labelKey]"
           :maxlength="20"
-        ></el-input>
+          @blur="() => updateNode(nodeData, node, false)"
+          @keydown.enter.native="() => updateNode(nodeData, node, true)"
+        />
       </div>
       <div
-        v-if="!noOper && (data.noOper !== true) && !data.isEditing"
+        v-if="!noOper && (nodeData.noOper !== true) && !nodeData.isEditing"
         class="opertree-node-oper"
       >
         <el-popover
@@ -55,57 +55,67 @@
             slot="reference"
             class="opertree-btn"
           >
-            <i class="icon-more"></i>
+            <i class="icon-more" />
           </div>
           <ul class="opertree-opts">
             <slot
               name="operBtns0"
-              :data="data"
+              :data="nodeData"
               :node="node"
-            ></slot>
+            />
             <li
               v-if="opBtns.indexOf('addChild') >= 0"
               v-show="node.level < maxLev"
-              @click="() => beforeAppend(data, node)"
-            >{{addChildBtnText || "添加子分类"}}</li>
+              @click="() => beforeAppend(nodeData, node)"
+            >
+              {{ addChildBtnText || "添加子分类" }}
+            </li>
             <slot
               name="operBtns1"
-              :data="data"
+              :data="nodeData"
               :node="node"
-            ></slot>
+            />
             <li
               v-if="opBtns.indexOf('rename') >= 0"
-              @click="() => beforeRename(data, node)"
-            >重命名</li>
+              @click="() => beforeRename(nodeData, node)"
+            >
+              重命名
+            </li>
             <slot
               name="operBtns2"
-              :data="data"
+              :data="nodeData"
               :node="node"
-            ></slot>
+            />
             <li
               v-if="opBtns.indexOf('moveUp') >= 0"
-              v-show="moveUpShow(data, node)"
-              @click="() => $emit('move-up', data, node)"
-            >上移</li>
+              v-show="moveUpShow(nodeData, node)"
+              @click="() => $emit('move-up', nodeData, node)"
+            >
+              上移
+            </li>
             <li
               v-if="opBtns.indexOf('moveDown') >= 0"
-              v-show="moveDownShow(data, node)"
-              @click="() => $emit('move-down', data, node)"
-            >下移</li>
+              v-show="moveDownShow(nodeData, node)"
+              @click="() => $emit('move-down', nodeData, node)"
+            >
+              下移
+            </li>
             <slot
               name="operBtns3"
-              :data="data"
+              :data="nodeData"
               :node="node"
-            ></slot>
+            />
             <li
               v-if="opBtns.indexOf('delete') >= 0"
-              @click="() => $emit('remove', data, node)"
-            >删除</li>
+              @click="() => $emit('remove', nodeData, node)"
+            >
+              删除
+            </li>
             <slot
               name="operBtns"
-              :data="data"
+              :data="nodeData"
               :node="node"
-            ></slot>
+            />
           </ul>
         </el-popover>
       </div>
@@ -117,7 +127,7 @@
 const NEW_NODE_ID = -10;
 export default {
   name: "OperTree",
-  props: ["data", "props", "operBtns", "addChildBtnText", "maxLevel", "no-img"],
+  props: ["data", "props", "operBtns", "addChildBtnText", "maxLevel", "noImg"],
   data() {
     return {
       inputOrginalValue: "",
@@ -125,6 +135,26 @@ export default {
       currentNodeKey: -1,
       expandKey: [-1]
     };
+  },
+  computed: {
+    childrenKey() {
+      return this.props["children"] || "children";
+    },
+    labelKey() {
+      return this.props["label"] || "label";
+    },
+    treeData() {
+      return this.data.concat([]);
+    },
+    maxLev() {
+      return this.maxLevel || 3;
+    },
+    opBtns() {
+      return this.operBtns || [];
+    },
+    noOper() {
+      return !this.opBtns.length && !this.$scopedSlots.operBtns;
+    }
   },
   methods: {
     /** 在根节点添加一个节点，只有一个根节点的时候使用 */
@@ -230,7 +260,11 @@ export default {
         return false;
       }
       const index = children.findIndex(d => d.id === data.id);
-      return index > 0;
+      //“全部”和“未分类”等没有操作，下面的不应该能往上移动
+      if (index > 0) {
+        return !children[index - 1].noOper;
+      }
+      return false;
     },
     moveDownShow(data, node) {
       if (data.noMoveDown) {
@@ -266,26 +300,6 @@ export default {
           }
         }
       });
-    }
-  },
-  computed: {
-    childrenKey() {
-      return this.props["children"] || "children";
-    },
-    labelKey() {
-      return this.props["label"] || "label";
-    },
-    treeData() {
-      return this.data.concat([]);
-    },
-    maxLev() {
-      return this.maxLevel || 3;
-    },
-    opBtns() {
-      return this.operBtns || [];
-    },
-    noOper() {
-      return !this.opBtns.length && !this.$scopedSlots.operBtns;
     }
   }
 };

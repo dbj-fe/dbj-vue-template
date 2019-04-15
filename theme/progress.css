@@ -3,7 +3,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -16,16 +16,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -108,6 +103,8 @@
 /* Footer
 --------------------------*/
 /* Main
+--------------------------*/
+/* Timeline
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -122,7 +119,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -135,16 +132,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -228,6 +220,8 @@
 --------------------------*/
 /* Main
 --------------------------*/
+/* Timeline
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-progress {
@@ -235,7 +229,7 @@
   line-height: 1; }
   .el-progress__text {
     font-size: 14px;
-    color: #333;
+    color: #333333;
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -286,7 +280,7 @@
   .el-progress-bar__outer {
     height: 6px;
     border-radius: 100px;
-    background-color: #ebeef5;
+    background-color: #EBEEF5;
     overflow: hidden;
     position: relative;
     vertical-align: middle; }
@@ -295,11 +289,13 @@
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #ffa800;
+    background-color: #FFA800;
     text-align: right;
     border-radius: 100px;
     line-height: 1;
-    white-space: nowrap; }
+    white-space: nowrap;
+    -webkit-transition: width 0.6s ease;
+    transition: width 0.6s ease; }
     .el-progress-bar__inner::after {
       display: inline-block;
       content: "";
@@ -308,7 +304,7 @@
   .el-progress-bar__innerText {
     display: inline-block;
     vertical-align: middle;
-    color: #fff;
+    color: #FFFFFF;
     font-size: 12px;
     margin: 0 5px; }
 

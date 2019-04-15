@@ -1,10 +1,29 @@
 <template>
   <div class="empty-tip-container">
-    <div class="empty-tip-body" :class="noImg ? 'no-img' : ''">
-      <img v-if="!noImg" src="../../images/empty@2x.png" />
-      <p v-if="title" class="title">{{title}}</p>
-      <p v-if="tip" class="tip">{{tip}}</p>
-      <slot v-if="$slots.append" name="append"></slot>
+    <div
+      class="empty-tip-body"
+      :class="noImg ? 'no-img' : ''"
+    >
+      <img
+        v-if="!noImg"
+        src="../../images/empty@2x.png"
+      >
+      <p
+        v-if="title"
+        class="title"
+      >
+        {{ title }}
+      </p>
+      <p
+        v-if="tip"
+        class="tip"
+      >
+        {{ tip }}
+      </p>
+      <slot
+        v-if="$slots.append"
+        name="append"
+      />
     </div>
   </div>
 </template>

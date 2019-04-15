@@ -3,12 +3,9 @@
     <el-container>
       <el-header>
         <div class="header-title">
-          <img src="./images/logo@2x.png" />
-          <span>
-            <%name%>
-          </span>
+          <img src="./images/logo@2x.png">
+          <span>BIM企业后台</span>
         </div>
-        <%#if withLogin%>
         <el-dropdown
           trigger="click"
           size="medium"
@@ -23,30 +20,31 @@
               v-else
               src="./images/person-black@2x.png"
             >
-            <span class="header-user-name">{{name}}</span>
-            <i class="icon-arrow-line"></i>
+            <span class="header-user-name">{{ name }}</span>
+            <i class="icon-arrow-line" />
           </div>
           <el-dropdown-menu
-            class="header-oper-menu"
             slot="dropdown"
+            class="header-oper-menu"
           >
             <el-dropdown-item command="head">
-              <i class="icon-modify-picture"></i>修改头像</el-dropdown-item>
+              <i class="icon-modify-picture" />修改头像
+            </el-dropdown-item>
             <el-dropdown-item command="modify">
-              <i class="icon-modify"></i>修改资料</el-dropdown-item>
+              <i class="icon-modify" />修改资料
+            </el-dropdown-item>
             <el-dropdown-item command="quit">
-              <i class="icon-quit"></i>退出
+              <i class="icon-quit" />退出
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <%/if%>
       </el-header>
       <el-container>
         <el-aside width="240px">
-          <left-menu :menus="menus"></left-menu>
+          <left-menu :menus="menus" />
         </el-aside>
         <el-main>
-          <router-view></router-view>
+          <router-view />
         </el-main>
       </el-container>
     </el-container>
@@ -55,16 +53,14 @@
 
 <script>
 import LeftMenu from "@/components/common/LeftMenu";
-/*<%#if withLogin%>*/
 import { logout } from "@/service";
-/*<%/if%>*/
 
 export default {
-  name: "app",
-  props: ["menus"],
+  name: "App",
   components: {
     LeftMenu
   },
+  props: ["menus"],
   data() {
     return {
       avatar: "",
@@ -72,7 +68,6 @@ export default {
     };
   },
   methods: {
-    /*<%#if withLogin%>*/
     userOper(command) {
       switch (command) {
         case "quit":
@@ -86,9 +81,7 @@ export default {
           break;
       }
     }
-    /*<%/if%>*/
-  },
-  mounted() {}
+  }
 };
 </script>
 
@@ -98,6 +91,10 @@ export default {
   height: 100%;
   display: flex;
   min-width: 1336px;
+}
+
+.el-container {
+  height: 100%;
 }
 
 .el-header {
@@ -121,6 +118,7 @@ export default {
 .el-main {
   background: #f0f0f0;
   padding: 0;
+  height: 100%;
 }
 
 .header-title {
@@ -137,7 +135,6 @@ export default {
   margin-right: 20px;
 }
 
-/*<%#if withLogin%>*/
 .header-info {
   display: flex;
   align-items: center;
@@ -174,25 +171,13 @@ export default {
 .header-oper-menu {
   width: 120px;
 }
-/*<%/if%>*/
-</style>
 
-<%#if withLogin%>
-<style>
-.header-oper-menu i {
+.header-oper-menu >>> i {
   font-size: 20px;
   vertical-align: -4px;
   margin-right: 4px;
 }
-.header-oper-menu.el-dropdown-menu--medium .el-dropdown-menu__item {
+.header-oper-menu >>> .el-dropdown-menu__item {
   padding: 8px 16px;
 }
-.header-oper-menu .el-dropdown-menu__item:not(.is-disabled):hover {
-  color: #666;
-}
-
-.header-oper-menu .el-dropdown-menu__item:not(.is-disabled):active {
-  background-color: #f5f5f5;
-}
 </style>
-<%/if%>

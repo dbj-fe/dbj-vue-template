@@ -3,7 +3,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -16,16 +16,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -108,6 +103,8 @@
 /* Footer
 --------------------------*/
 /* Main
+--------------------------*/
+/* Timeline
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -122,7 +119,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -135,16 +132,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -228,6 +220,8 @@
 --------------------------*/
 /* Main
 --------------------------*/
+/* Timeline
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-alert {
@@ -238,7 +232,7 @@
   box-sizing: border-box;
   border-radius: 4px;
   position: relative;
-  background-color: #fff;
+  background-color: #FFFFFF;
   overflow: hidden;
   opacity: 1;
   display: -webkit-box;
@@ -260,9 +254,9 @@
       color: #47C677; }
   .el-alert--info {
     background-color: whitesmoke;
-    color: #999; }
+    color: #999999; }
     .el-alert--info .el-alert__description {
-      color: #999; }
+      color: #999999; }
   .el-alert--warning {
     background-color: #fff2ec;
     color: #FF7E43; }
@@ -292,7 +286,7 @@
     margin: 5px 0 0 0; }
   .el-alert__closebtn {
     font-size: 12px;
-    color: #ccc;
+    color: #CCCCCC;
     opacity: 1;
     position: absolute;
     top: 12px;

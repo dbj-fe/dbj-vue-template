@@ -3,7 +3,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -16,16 +16,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -108,6 +103,8 @@
 /* Footer
 --------------------------*/
 /* Main
+--------------------------*/
+/* Timeline
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -122,7 +119,7 @@
 /* Element Chalk Variables */
 /* Transition
 -------------------------- */
-/* Colors
+/* Color
 -------------------------- */
 /* 53a8ff */
 /* 66b1ff */
@@ -135,16 +132,11 @@
 /* ecf5ff */
 /* Link
 -------------------------- */
-/* Background
--------------------------- */
 /* Border
--------------------------- */
-/*origin: #dcdfe6*/
-/* Box-shadow
 -------------------------- */
 /* Fill
 -------------------------- */
-/* Font
+/* Typography
 -------------------------- */
 /* Size
 -------------------------- */
@@ -228,6 +220,8 @@
 --------------------------*/
 /* Main
 --------------------------*/
+/* Timeline
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-notification {
@@ -239,9 +233,9 @@
   border-radius: 8px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #ebeef5;
+  border: 1px solid #EBEEF5;
   position: fixed;
-  background-color: #fff;
+  background-color: #FFFFFF;
   -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   -webkit-transition: opacity .3s, left .3s, right .3s, top 0.4s, bottom .3s, -webkit-transform .3s;
@@ -258,13 +252,13 @@
   .el-notification__title {
     font-weight: bold;
     font-size: 16px;
-    color: #333;
+    color: #333333;
     margin: 0; }
   .el-notification__content {
     font-size: 14px;
     line-height: 21px;
     margin: 6px 0 0 0;
-    color: #333;
+    color: #333333;
     text-align: justify; }
     .el-notification__content p {
       margin: 0; }
@@ -277,16 +271,16 @@
     top: 18px;
     right: 15px;
     cursor: pointer;
-    color: #999;
+    color: #999999;
     font-size: 16px; }
     .el-notification__closeBtn:hover {
-      color: #333; }
+      color: #333333; }
   .el-notification .el-icon-success {
     color: #47C677; }
   .el-notification .el-icon-error {
     color: #FF5A47; }
   .el-notification .el-icon-info {
-    color: #999; }
+    color: #999999; }
   .el-notification .el-icon-warning {
     color: #FF7E43; }
 

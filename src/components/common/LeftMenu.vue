@@ -18,8 +18,8 @@
         <i
           class="font24"
           :class="menu.icon"
-        ></i>
-        <span slot="title">{{menu.title}}</span>
+        />
+        <span slot="title">{{ menu.title }}</span>
       </el-menu-item>
       <el-submenu
         v-else
@@ -30,16 +30,16 @@
           <i
             class="font24"
             :class="menu.icon"
-          ></i>
-          <span>{{menu.title}}</span>
+          />
+          <span>{{ menu.title }}</span>
         </template>
         <el-menu-item-group>
           <el-menu-item
             v-for="(sub, idx2) in menu.children"
-            :index="sub.path"
             :key="`${idx}-${idx2}`"
+            :index="sub.path"
           >
-            <span>{{sub.title}}</span>
+            <span>{{ sub.title }}</span>
           </el-menu-item>
         </el-menu-item-group>
       </el-submenu>

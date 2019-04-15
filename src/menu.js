@@ -72,7 +72,7 @@ function getMenus(perms = [], accountAdmin = false) {
     return {
       menus: menus,
       defaultPath: defaultPath
-    };;
+    };
   }
   let menuList = [];
   let permMap = {};

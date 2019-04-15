@@ -6,30 +6,30 @@
           <el-option
             :value="1"
             label="选项1"
-          ></el-option>
+          />
           <el-option
             :value="2"
             label="选项2"
-          ></el-option>
+          />
           <el-option
             :value="3"
             label="选项3"
-          ></el-option>
+          />
         </el-select>
       </div>
       <div class="layout-header-right">
         <el-input
+          v-model="query.keyword"
           class="search-input"
           placeholder="请输入姓名／电话／职务"
-          v-model="query.keyword"
           clearable
           @keydown.enter.native="searchPage"
         >
           <el-button
             slot="append"
-            @click="searchPage"
             icon="icon-search"
-          ></el-button>
+            @click="searchPage"
+          />
         </el-input>
       </div>
     </div>
@@ -45,18 +45,20 @@
               :src="item.img"
               :width="160"
               :height="160"
-            ></pic>
+            />
           </div>
           <div class="list-item-info">
-            <div class="list-item-title">{{item.name}}</div>
+            <div class="list-item-title">
+              {{ item.name }}
+            </div>
             <ul class="detail-info-list horizonal">
-              <li>信息1：{{item.info1}}</li>
-              <li>信息2：{{item.info2}}</li>
-              <li>信息2：{{item.info2}}</li>
+              <li>信息1：{{ item.info1 }}</li>
+              <li>信息2：{{ item.info2 }}</li>
+              <li>信息2：{{ item.info2 }}</li>
             </ul>
             <ul class="detail-info-list">
-              <li>信息1：{{item.info1}}</li>
-              <li>信息2：{{item.info2}}</li>
+              <li>信息1：{{ item.info1 }}</li>
+              <li>信息2：{{ item.info2 }}</li>
             </ul>
           </div>
           <div class="list-item-oper">
@@ -76,8 +78,7 @@
           :total="query.pageTotal"
           :page-size="query.pageSize"
           @current-change="getPage"
-        >
-        </el-pagination>
+        />
       </div>
     </div>
   </div>
@@ -88,8 +89,8 @@ import Pic from "@/components/common/Pic";
 import queryMixin from "@/utils/queryMixin";
 export default {
   name: "DemoList",
-  mixins: [queryMixin],
   components: { Pic },
+  mixins: [queryMixin],
   data() {
     return {
       query: {
@@ -150,18 +151,20 @@ export default {
       ]
     };
   },
+  mounted() {
+    // eslint-disable-next-line
+    console.log(this.query.pageNum, 8888);
+  },
   methods: {
     searchPage() {},
     getPage(page) {
+      // eslint-disable-next-line
       console.log(page);
       this.query.pageNum = page;
     },
     gotoDetail(id) {
       this.$router.push({ path: `/demo/listDetail/${id}` });
     }
-  },
-  mounted() {
-    console.log(this.query.pageNum, 8888);
   }
 };
 </script>

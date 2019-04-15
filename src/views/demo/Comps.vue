@@ -2,10 +2,19 @@
   <div class="layout-container">
     <div class="layout-body horizonal">
       <div class="layout-main">
-        <el-button type="primary" @click="formDialogShow = true">表单弹框</el-button>
+        <el-button
+          type="primary"
+          @click="formDialogShow = true"
+        >
+          表单弹框
+        </el-button>
       </div>
     </div>
-    <form-dialog v-if="formDialogShow" @close="formDialogShow = false" @submit="formDialogShow = false"></form-dialog>
+    <form-dialog
+      v-if="formDialogShow"
+      @close="formDialogShow = false"
+      @submit="formDialogShow = false"
+    />
   </div>
 </template>
 <script>

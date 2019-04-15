@@ -2,7 +2,9 @@
   <div class="detail-container">
     <div class="detail-header">
       <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{path: prevPath}">XX管理</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{path: prevPath}">
+          XX管理
+        </el-breadcrumb-item>
         <el-breadcrumb-item>XX详情</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
@@ -23,7 +25,7 @@
       </div>
     </div>
     <div class="detail-body">
-      <demo-table></demo-table>
+      <demo-table />
     </div>
   </div>
 </template>

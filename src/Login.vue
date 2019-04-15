@@ -5,58 +5,68 @@
         <img
           class="login-logo"
           src="./images/logo-vr@2x.png"
-        />
-        <div class="login-title">企业后台</div>
+        >
+        <div class="login-title">
+          企业后台
+        </div>
       </div>
-      <div class="line"></div>
+      <div class="line" />
       <div class="login-form-wrapper">
-        <div class="login-form-title">登录</div>
+        <div class="login-form-title">
+          登录
+        </div>
         <transition name="el-zoom-in-center">
           <div
             v-show="errorCode > 0"
             class="login-error-tip"
           >
-            <i class="icon-clean"></i>{{errorMsg}}</div>
+            <i class="icon-clean" />{{ errorMsg }}
+          </div>
         </transition>
         <div class="login-input-wrapper">
           <input
-            placeholder="请输入手机号码"
             v-model="account"
+            placeholder="请输入手机号码"
             @blur="validateAccount"
             @keyup.enter="login"
-          />
-          <i class="icon-person"></i>
+          >
+          <i class="icon-person" />
         </div>
         <div class="login-input-wrapper">
           <input
+            v-model="password"
             type="password"
             placeholder="请输入密码"
-            v-model="password"
             @blur="validatePassword"
             @keyup.enter="login"
-          />
-          <i class="icon-login-password"></i>
+          >
+          <i class="icon-login-password" />
         </div>
         <div
           class="forget-password"
           @click="forgetPassword"
-        >忘记密码</div>
+        >
+          忘记密码
+        </div>
         <el-button
           v-if="!loading"
           class="login-btn"
           type="primary"
           @click="login"
-        >登录</el-button>
+        >
+          登录
+        </el-button>
         <el-button
           v-else
           class="login-btn"
           type="primary"
-        >正在登录...</el-button>
+        >
+          正在登录...
+        </el-button>
       </div>
     </div>
-    <div class="login-bg1"></div>
-    <div class="login-bg2"></div>
-  </div>
+    <div class="login-bg1" />
+    <div class="login-bg2" />
 </template>
 
 <script>

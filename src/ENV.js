@@ -8,5 +8,5 @@ const ENV = {
     PASSWORD_DOMAIN: "https://sys.dabanjia.com"
   }
 };
-
+// eslint-disable-next-line no-undef
 export default ENV[process.env.NODE_ENV];

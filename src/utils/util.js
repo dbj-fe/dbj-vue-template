@@ -46,6 +46,7 @@ export function getFileKey(fileName, prefix = 'DABANJIA') {
 export function parseURL(url) {
   var a = document.createElement('a');
   a.href = url;
+  /*eslint-disable */
   return {
     source: url,
     protocol: a.protocol.replace(':', ''),
@@ -69,6 +70,7 @@ export function parseURL(url) {
     relative: (a.href.match(/tps?:\/\/[^\/]+(.+)/) || [, ''])[1],
     segments: a.pathname.replace(/^\//, '').split('/')
   };
+  /*eslint-enable */
 }
 
 export function formatFileSize(fileSize, idx = 0) {
@@ -87,7 +89,7 @@ export function getFileMd5(file, callback) {
     currentChunk = 0,
     spark = new SparkMD5.ArrayBuffer(),
     fileReader = new FileReader();
-
+  /*eslint-disable no-console */
   fileReader.onload = function (e) {
     console.log('read chunk nr', currentChunk + 1, 'of', chunks);
     spark.append(e.target.result);                   // Append array buffer
@@ -102,6 +104,7 @@ export function getFileMd5(file, callback) {
       callback(hash);
     }
   };
+  /*eslint-enable*/
 
   fileReader.onerror = function () {
     console.warn('oops, something went wrong.');
