@@ -67,6 +67,7 @@
     </div>
     <div class="login-bg1" />
     <div class="login-bg2" />
+  </div>
 </template>
 
 <script>

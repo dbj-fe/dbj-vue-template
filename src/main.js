@@ -184,13 +184,14 @@ Vue.filter('formatDate', function (value, formatStr) {
   if (!value || isNaN(value)) {
     return '-';
   }
-  return moment(value, 'x').format(formatStr || 'YYYY年MM月DD日 HH:mm:ss')
+  return moment(value, 'x').format(formatStr || 'YYYY-MM-DD HH:mm:ss')
 });
 
 /*<%#if withLogin%> 登录页处理 */
 
 let { params, hash } = parseURL(window.location.href);
 if (params.token) {
+  // eslint-disable-next-line
   console.debug(params.token, params.loginId);
   loginWithToken({ token: params.token, loginId: params.loginId }).then(res => {
     window.location.href = "/#" + hash;
@@ -199,26 +200,26 @@ if (params.token) {
   let loginView = () => {
     new Vue({
       el: '#app',
-      template: '<Login/>',
-      components: { Login }
+      components: { Login },
+      template: '<Login/>'
     });
   }
   getUserInfo().then(res => {
     if (res.code == 1 && res.data) {
-      let { user = {}, company = {} } = res.data;
+      let { user = {} } = res.data;
       let accountAdmin = user.accountAdmin;
       let perms = res.data.permissionCodes.map(item => item);
       let { menus, defaultPath } = getMenus(perms, accountAdmin);
       if (menus.length) {
         new Vue({
           el: '#app',
+          components: { App },
           data: {
             userInfo: res.data.user,
             menus: menus
           },
           router: createRouter(defaultPath),
-          template: '<App :user-info="userInfo" :menus="menus"/>',
-          components: { App }
+          template: '<App :user-info="userInfo" :menus="menus"/>'
         });
       } else {
         loginView();
@@ -227,7 +228,7 @@ if (params.token) {
       loginView();
     }
   }).catch(([err, status]) => {
-    console.log(err, status);
+    console.error(err, status);
     loginView();
   })
 }
@@ -238,11 +239,11 @@ let { menus, defaultPath } = getMenus(perms, accountAdmin);
 
 new Vue({
   el: '#app',
+  components: { App },
   data: {
     menus: menus
   },
   router: createRouter(defaultPath),
-  components: { App },
   template: '<App :menus="menus"/>'
 })
 /*<%/if%>*/
