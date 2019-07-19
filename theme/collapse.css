@@ -38,7 +38,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -154,7 +158,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -221,6 +225,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -262,7 +270,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -329,6 +337,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -452,6 +464,10 @@
   border-top: 1px solid #EBEEF5;
   border-bottom: 1px solid #EBEEF5; }
 
+.el-collapse-item.is-disabled .el-collapse-item__header {
+  color: #bbb;
+  cursor: not-allowed; }
+
 .el-collapse-item__header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -481,7 +497,7 @@
       -webkit-transform: rotate(90deg);
       transform: rotate(90deg); }
   .el-collapse-item__header.focusing:focus:not(:hover) {
-    color: #FFA800; }
+    color: #19C370; }
   .el-collapse-item__header.is-active {
     border-bottom-color: transparent; }
 

@@ -38,7 +38,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -156,7 +160,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -223,6 +227,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -272,7 +280,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -339,6 +347,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -382,7 +394,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -449,6 +461,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -498,7 +514,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -565,10 +581,15 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
 .el-textarea {
+  position: relative;
   display: inline-block;
   width: 100%;
   vertical-align: bottom;
@@ -591,6 +612,8 @@
     transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
     .el-textarea__inner::-webkit-input-placeholder {
       color: #CCCCCC; }
+    .el-textarea__inner::-moz-placeholder {
+      color: #CCCCCC; }
     .el-textarea__inner::-ms-input-placeholder {
       color: #CCCCCC; }
     .el-textarea__inner::placeholder {
@@ -599,18 +622,31 @@
       border-color: #CCCCCC; }
     .el-textarea__inner:focus {
       outline: none;
-      border-color: #FFA800; }
+      border-color: #19C370; }
+  .el-textarea .el-input__count {
+    color: #909399;
+    background: #FFFFFF;
+    position: absolute;
+    font-size: 12px;
+    bottom: 5px;
+    right: 10px; }
   .el-textarea.is-disabled .el-textarea__inner {
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     border-color: #F2F2F2;
     color: #CCCCCC;
     cursor: not-allowed; }
     .el-textarea.is-disabled .el-textarea__inner::-webkit-input-placeholder {
       color: #CCCCCC; }
+    .el-textarea.is-disabled .el-textarea__inner::-moz-placeholder {
+      color: #CCCCCC; }
     .el-textarea.is-disabled .el-textarea__inner::-ms-input-placeholder {
       color: #CCCCCC; }
     .el-textarea.is-disabled .el-textarea__inner::placeholder {
       color: #CCCCCC; }
+  .el-textarea.is-exceed .el-textarea__inner {
+    border-color: #F56C6C; }
+  .el-textarea.is-exceed .el-input__count {
+    color: #F56C6C; }
 
 .el-input {
   position: relative;
@@ -636,12 +672,25 @@
   .el-input .el-input__clear {
     color: #CCCCCC;
     font-size: 14px;
-    line-height: 16px;
     cursor: pointer;
     -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1); }
     .el-input .el-input__clear:hover {
       color: #999999; }
+  .el-input .el-input__count {
+    height: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #909399;
+    font-size: 12px; }
+    .el-input .el-input__count .el-input__count-inner {
+      background: #FFFFFF;
+      display: inline-block;
+      padding: 0 5px; }
   .el-input__inner {
     -webkit-appearance: none;
     background-color: #FFFFFF;
@@ -662,6 +711,8 @@
     width: 100%; }
     .el-input__inner::-webkit-input-placeholder {
       color: #CCCCCC; }
+    .el-input__inner::-moz-placeholder {
+      color: #CCCCCC; }
     .el-input__inner::-ms-input-placeholder {
       color: #CCCCCC; }
     .el-input__inner::placeholder {
@@ -670,7 +721,7 @@
       border-color: #CCCCCC; }
     .el-input__inner:focus {
       outline: none;
-      border-color: #FFA800; }
+      border-color: #19C370; }
   .el-input__suffix {
     position: absolute;
     height: 100%;
@@ -709,13 +760,15 @@
     pointer-events: none; }
   .el-input.is-active .el-input__inner {
     outline: none;
-    border-color: #FFA800; }
+    border-color: #19C370; }
   .el-input.is-disabled .el-input__inner {
-    background-color: #f5f5f5;
+    background-color: #F5F5F5;
     border-color: #F2F2F2;
     color: #CCCCCC;
     cursor: not-allowed; }
     .el-input.is-disabled .el-input__inner::-webkit-input-placeholder {
+      color: #CCCCCC; }
+    .el-input.is-disabled .el-input__inner::-moz-placeholder {
       color: #CCCCCC; }
     .el-input.is-disabled .el-input__inner::-ms-input-placeholder {
       color: #CCCCCC; }
@@ -723,6 +776,10 @@
       color: #CCCCCC; }
   .el-input.is-disabled .el-input__icon {
     cursor: not-allowed; }
+  .el-input.is-exceed .el-input__inner {
+    border-color: #F56C6C; }
+  .el-input.is-exceed .el-input__suffix .el-input__count {
+    color: #F56C6C; }
   .el-input--suffix .el-input__inner {
     padding-right: 30px; }
   .el-input--prefix .el-input__inner {
@@ -759,8 +816,8 @@
     vertical-align: middle;
     display: table-cell; }
   .el-input-group__append, .el-input-group__prepend {
-    background-color: #f5f5f5;
-    color: #999999;
+    background-color: #F5F5F5;
+    color: #909399;
     vertical-align: middle;
     display: table-cell;
     position: relative;
@@ -834,14 +891,14 @@
     width: 40px;
     height: auto;
     text-align: center;
-    background: #f5f5f5;
+    background: #F5F5F5;
     color: #333333;
     cursor: pointer;
     font-size: 13px; }
     .el-input-number__increase:hover, .el-input-number__decrease:hover {
-      color: #FFA800; }
+      color: #19C370; }
       .el-input-number__increase:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled), .el-input-number__decrease:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled) {
-        border-color: #FFA800; }
+        border-color: #19C370; }
     .el-input-number__increase.is-disabled, .el-input-number__decrease.is-disabled {
       color: #CCCCCC;
       cursor: not-allowed; }
@@ -962,7 +1019,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -1029,6 +1086,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -1078,7 +1139,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -1145,6 +1206,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -1279,7 +1344,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -1347,6 +1412,10 @@
 --------------------------*/
 /* Timeline
 --------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-slider::before,
@@ -1400,7 +1469,7 @@
 
 .el-slider__bar {
   height: 6px;
-  background-color: #FFA800;
+  background-color: #19C370;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   position: absolute; }
@@ -1438,7 +1507,7 @@
 .el-slider__button {
   width: 16px;
   height: 16px;
-  border: solid 2px #FFA800;
+  border: solid 2px #19C370;
   background-color: #FFFFFF;
   border-radius: 50%;
   -webkit-transition: .2s;
@@ -1465,6 +1534,19 @@
   background-color: #FFFFFF;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%); }
+
+.el-slider__marks {
+  top: 0;
+  left: 12px;
+  width: 18px;
+  height: 100%; }
+  .el-slider__marks-text {
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #909399;
+    margin-top: 15px; }
 
 .el-slider.is-vertical {
   position: relative; }
@@ -1522,4 +1604,9 @@
         border-color: #CCCCCC; }
       .el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__decrease,
       .el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__increase {
-        border-color: #FFA800; }
+        border-color: #19C370; }
+  .el-slider.is-vertical .el-slider__marks-text {
+    margin-top: 0;
+    left: 15px;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%); }

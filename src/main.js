@@ -52,8 +52,8 @@ import {
   DatePicker,
   Steps,
   Step
-} from 'element-ui'
-
+} from '@dbj-fe/element-ui'
+import CollapseTransition from "@dbj-fe/element-ui/lib/transitions/collapse-transition"
 /*<%#if withRichEditor%> 富文本编辑器 */
 import QuillEditor from 'vue-quill-editor'
 /*<%/if%>*/
@@ -107,6 +107,7 @@ Vue.use(Tooltip);
 Vue.use(DatePicker);
 Vue.use(Steps);
 Vue.use(Step);
+Vue.component(CollapseTransition.name, CollapseTransition);
 /*<%#if withRichEditor %> 富文本编辑器 */
 Vue.use(QuillEditor);
 /*<%/if %>*/

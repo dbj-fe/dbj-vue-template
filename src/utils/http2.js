@@ -5,7 +5,7 @@
  * http请求发送工具类。
  *
  */
-import { Loading, MessageBox } from 'element-ui'
+import { Loading, MessageBox } from '@dbj-fe/element-ui'
 import fetch from 'isomorphic-fetch'
 import * as util from './util'
 

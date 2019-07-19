@@ -38,7 +38,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -154,7 +158,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -222,6 +226,10 @@
 --------------------------*/
 /* Timeline
 --------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-timeline-item {
@@ -261,15 +269,15 @@
       width: 14px;
       height: 14px; }
     .el-timeline-item__node--primary {
-      background-color: #FFA800; }
+      background-color: #19C370; }
     .el-timeline-item__node--success {
-      background-color: #47C677; }
+      background-color: #67C23A; }
     .el-timeline-item__node--warning {
-      background-color: #FF7E43; }
+      background-color: #E6A23C; }
     .el-timeline-item__node--danger {
-      background-color: #FF5A47; }
+      background-color: #F56C6C; }
     .el-timeline-item__node--info {
-      background-color: #999999; }
+      background-color: #909399; }
   .el-timeline-item__dot {
     position: absolute;
     display: -webkit-box;

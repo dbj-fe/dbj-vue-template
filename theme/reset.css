@@ -37,7 +37,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 --------------------------*/
 /* Timeline
 --------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
 /* Break-point
 --------------------------*/
 body {
@@ -115,12 +119,12 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 a {
-  color: #FFA800;
+  color: #19C370;
   text-decoration: none; }
   a:hover, a:focus {
-    color: #ffb933; }
+    color: #47cf8d; }
   a:active {
-    color: #e69700; }
+    color: #17b065; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333333;

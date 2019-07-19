@@ -38,7 +38,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -154,7 +158,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -222,6 +226,10 @@
 --------------------------*/
 /* Timeline
 --------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-notification {
@@ -248,7 +256,8 @@
   .el-notification.left {
     left: 16px; }
   .el-notification__group {
-    margin-left: 13px; }
+    margin-left: 13px;
+    margin-right: 8px; }
   .el-notification__title {
     font-weight: bold;
     font-size: 16px;
@@ -276,13 +285,13 @@
     .el-notification__closeBtn:hover {
       color: #333333; }
   .el-notification .el-icon-success {
-    color: #47C677; }
+    color: #67C23A; }
   .el-notification .el-icon-error {
-    color: #FF5A47; }
+    color: #F56C6C; }
   .el-notification .el-icon-info {
-    color: #999999; }
+    color: #909399; }
   .el-notification .el-icon-warning {
-    color: #FF7E43; }
+    color: #E6A23C; }
 
 .el-notification-fade-enter.right {
   right: 0;

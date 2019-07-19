@@ -38,7 +38,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -105,6 +105,10 @@
 /* Main
 --------------------------*/
 /* Timeline
+--------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
 --------------------------*/
 /* Break-point
 --------------------------*/
@@ -154,7 +158,7 @@
 -------------------------- */
 /* Alert
 -------------------------- */
-/* Message Box
+/* MessageBox
 -------------------------- */
 /* Message
 -------------------------- */
@@ -222,6 +226,10 @@
 --------------------------*/
 /* Timeline
 --------------------------*/
+/* Link
+--------------------------*/
+/* Calendar
+--------------------------*/
 /* Break-point
 --------------------------*/
 .el-step {
@@ -250,14 +258,14 @@
       color: #CCCCCC;
       border-color: #CCCCCC; }
     .el-step__head.is-success {
-      color: #47C677;
-      border-color: #47C677; }
+      color: #67C23A;
+      border-color: #67C23A; }
     .el-step__head.is-error {
-      color: #FF5A47;
-      border-color: #FF5A47; }
+      color: #F56C6C;
+      border-color: #F56C6C; }
     .el-step__head.is-finish {
-      color: #FFA800;
-      border-color: #FFA800; }
+      color: #19C370;
+      border-color: #19C370; }
   .el-step__icon {
     position: relative;
     z-index: 1;
@@ -327,11 +335,11 @@
     .el-step__title.is-wait {
       color: #CCCCCC; }
     .el-step__title.is-success {
-      color: #47C677; }
+      color: #67C23A; }
     .el-step__title.is-error {
-      color: #FF5A47; }
+      color: #F56C6C; }
     .el-step__title.is-finish {
-      color: #FFA800; }
+      color: #19C370; }
   .el-step__description {
     padding-right: 10%;
     margin-top: -5px;
@@ -343,11 +351,11 @@
     .el-step__description.is-wait {
       color: #CCCCCC; }
     .el-step__description.is-success {
-      color: #47C677; }
+      color: #67C23A; }
     .el-step__description.is-error {
-      color: #FF5A47; }
+      color: #F56C6C; }
     .el-step__description.is-finish {
-      color: #FFA800; }
+      color: #19C370; }
   .el-step.is-horizontal {
     display: inline-block; }
     .el-step.is-horizontal .el-step__line {
