@@ -9,7 +9,16 @@
     :show-file-list="false"
     :accept="acceptType"
   >
-    <slot v-if="$slots.default" />
+    <template v-if="$slots.default">
+      <slot />
+      <div
+        v-if="tip"
+        slot="tip"
+        class="uploader-tip"
+      >
+        {{ tip }}
+      </div>
+    </template>
     <div
       v-else-if="type == 'image'"
       class="uploader-img-wrapper"

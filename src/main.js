@@ -123,7 +123,7 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 /*<%/if%>*/
 import "@/style/base.css"
-import "@/style/icon/style.css"
+import "@/style/icon/iconfont.css"
 import "@/style/theme-override.css"
 import "@/style/app.css"
 import App from './App'
@@ -206,20 +206,24 @@ if (params.token) {
   }
   getUserInfo().then(res => {
     if (res.code == 1 && res.data) {
-      let { user = {} } = res.data;
+      let {
+        user = {},
+        permissionCodes = [],
+        company = {}
+      } = res.data;
       let accountAdmin = user.accountAdmin;
-      let perms = res.data.permissionCodes.map(item => item);
-      let { menus, defaultPath } = getMenus(perms, accountAdmin);
+      let { menus, defaultPath } = getMenus(permissionCodes, accountAdmin);
       if (menus.length) {
         new Vue({
           el: '#app',
           components: { App },
           data: {
-            userInfo: res.data.user,
+            userInfo: user,
+            company: company,
             menus: menus
           },
           router: createRouter(defaultPath),
-          template: '<App :user-info="userInfo" :menus="menus"/>'
+          template: '<App :user-info="userInfo" :company="company" :menus="menus"/>'
         });
       } else {
         loginView();

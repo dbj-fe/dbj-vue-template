@@ -1,18 +1,17 @@
-# 打扮家项目模板
-
-使用方法：
+## Build Setup
 
 ``` bash
-# 1.全局安装打扮家的前端脚手架
-npm install dbj-cli -g
+# install dependencies
+npm install
 
-# 2.查看帮助，安装dbj-cli之后就可以使用dbj命令了，在命令行中输入命令
-dbj
+# serve with hot reload at https://local.meiwu365.com/
+npm start
 
-# 3.创建vue项目，使用命令，脚手架会自动下载该模板创建项目
-dbj init project-name
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-> 创建项目开始会提问一些问题，请按照实际使用填写，填写完成后就能创建一个名称是project-name的vue项目了
-> 进入目录中npm install、npm start就可以访问项目了
-
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
