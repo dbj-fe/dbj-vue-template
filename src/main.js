@@ -218,12 +218,12 @@ if (params.token) {
           el: '#app',
           components: { App },
           data: {
-            userInfo: user,
+            user: user,
             company: company,
             menus: menus
           },
           router: createRouter(defaultPath),
-          template: '<App :user-info="userInfo" :company="company" :menus="menus"/>'
+          template: '<App :user="user" :company="company" :menus="menus"/>'
         });
       } else {
         loginView();
