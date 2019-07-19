@@ -1,7 +1,6 @@
 import http2 from '@/utils/http2'
 import ENV from '@/ENV'
 
-/*<%#if withLogin%> 登录相关接口 */
 //账号密码登录
 export function login({ password, account }) {
   return http2.post(`${ENV.API_DOMAIN}/web/login`, { password, account, systemCode: '<%systemCode%>' }, true, true);
@@ -17,12 +16,20 @@ export function getUserInfo() {
   return http2.get(`${ENV.API_DOMAIN}/api/user`, { systemCode: '<%systemCode%>' }, true, true);
 }
 
+//修改个人姓名、头像
+export function editUserData(params) {
+  return http2.put(`${ENV.API_DOMAIN}/api/user/info`, params, false);
+}
+
+//修改密码
+export function editUserPassword(params) {
+  return http2.put(`${ENV.API_DOMAIN}/api/user/new_password`, params, true, true);
+}
+
 //客户端带过来的token登录
 export function loginWithToken(params) {
   //return http2.get(`/web/pc/check`, params, false);
 }
-/*<%/if%> 登录相关接口 */
-
 
 //文件上传token获取
 export function getUploadToken(type) {

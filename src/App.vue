@@ -213,6 +213,7 @@ export default {
   justify-content: flex-end;
   cursor: pointer;
   padding: 0 32px;
+  height: 100%;
 }
 
 .header-info:hover {
