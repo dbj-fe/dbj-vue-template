@@ -11,7 +11,7 @@
     "build-stage": "node build/build.js stage"
   },
   "dependencies": {
-    "element-ui": "2.7.2",
+    "@dbj-fe/element-ui": "2.8.2-18",
     "isomorphic-fetch": "^2.2.1",
     "js-md5": "^0.7.3",
     "lodash": "^4.17.4",
@@ -36,7 +36,7 @@
     "chalk": "^2.4.2",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.0",
-    "element-theme-chalk": "2.7.2",
+    "@dbj-fe/element-theme-chalk": "2.8.2-18",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
     "extract-text-webpack-plugin": "^3.0.0",
