@@ -622,7 +622,7 @@
       border-color: #CCCCCC; }
     .el-textarea__inner:focus {
       outline: none;
-      border-color: #19C370; }
+      border-color: #ffa800; }
   .el-textarea .el-input__count {
     color: #909399;
     background: #FFFFFF;
@@ -721,7 +721,7 @@
       border-color: #CCCCCC; }
     .el-input__inner:focus {
       outline: none;
-      border-color: #19C370; }
+      border-color: #ffa800; }
   .el-input__suffix {
     position: absolute;
     height: 100%;
@@ -760,7 +760,7 @@
     pointer-events: none; }
   .el-input.is-active .el-input__inner {
     outline: none;
-    border-color: #19C370; }
+    border-color: #ffa800; }
   .el-input.is-disabled .el-input__inner {
     background-color: #F5F5F5;
     border-color: #F2F2F2;
@@ -896,9 +896,9 @@
     cursor: pointer;
     font-size: 13px; }
     .el-input-number__increase:hover, .el-input-number__decrease:hover {
-      color: #19C370; }
+      color: #ffa800; }
       .el-input-number__increase:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled), .el-input-number__decrease:hover:not(.is-disabled) ~ .el-input .el-input__inner:not(.is-disabled) {
-        border-color: #19C370; }
+        border-color: #ffa800; }
     .el-input-number__increase.is-disabled, .el-input-number__decrease.is-disabled {
       color: #CCCCCC;
       cursor: not-allowed; }
@@ -1469,7 +1469,7 @@
 
 .el-slider__bar {
   height: 6px;
-  background-color: #19C370;
+  background-color: #ffa800;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   position: absolute; }
@@ -1507,7 +1507,7 @@
 .el-slider__button {
   width: 16px;
   height: 16px;
-  border: solid 2px #19C370;
+  border: solid 2px #ffa800;
   background-color: #FFFFFF;
   border-radius: 50%;
   -webkit-transition: .2s;
@@ -1604,7 +1604,7 @@
         border-color: #CCCCCC; }
       .el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__decrease,
       .el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__increase {
-        border-color: #19C370; }
+        border-color: #ffa800; }
   .el-slider.is-vertical .el-slider__marks-text {
     margin-top: 0;
     left: 15px;

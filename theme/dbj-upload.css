@@ -249,7 +249,7 @@
   .dbj-upload--single.has-files .dbj-upload-list {
     display: block; }
   .dbj-upload__button {
-    color: #19C370;
+    color: #ffa800;
     font-size: 12px;
     line-height: 16px; }
     .dbj-upload__button i {
@@ -304,7 +304,7 @@
         line-height: 16px; }
         .dbj-upload-list__item .dbj-upload-list__item-content .content-wrapper > i {
           display: none;
-          color: #19C370;
+          color: #ffa800;
           margin-left: 12px;
           font-size: 14px;
           vertical-align: middle; }
@@ -371,7 +371,7 @@
           width: 0;
           height: 2px;
           border-radius: 2px;
-          background: #19C370;
+          background: #ffa800;
           -webkit-transition: 0.3s ease all;
           transition: 0.3s ease all; }
       .dbj-upload-list__item .dbj-upload-list__item-progress i {

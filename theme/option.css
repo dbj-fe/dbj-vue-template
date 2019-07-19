@@ -253,5 +253,5 @@
   .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
     background-color: #F5F5F5; }
   .el-select-dropdown__item.selected {
-    color: #19C370;
+    color: #ffa800;
     font-weight: bold; }

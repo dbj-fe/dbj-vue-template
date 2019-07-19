@@ -241,7 +241,7 @@
   .dbj-reader__input {
     display: none; }
   .dbj-reader__button {
-    color: #19C370;
+    color: #ffa800;
     font-size: 12px;
     line-height: 16px;
     cursor: pointer; }
@@ -281,7 +281,7 @@
       -ms-flex-align: center;
       align-items: center; }
       .dbj-reader__info > i {
-        color: #19C370;
+        color: #ffa800;
         margin-left: 12px;
         font-size: 14px;
         vertical-align: middle; }
