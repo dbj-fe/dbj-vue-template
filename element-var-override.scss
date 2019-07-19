@@ -1,0 +1,52 @@
+/// color|1|Brand Color|0
+$--color-primary: #ffa800 !default;
+/// color|1|Background Color|4
+$--color-white: #FFFFFF !default;
+
+/// color|1|Font Color|2
+$--color-text-primary: #333333 !default;
+/// color|1|Font Color|2
+$--color-text-regular: #333333 !default;
+/// color|1|Font Color|2
+$--color-text-secondary: #999999 !default;
+/// color|1|Font Color|2
+$--color-text-placeholder: #CCCCCC !default;
+/// color|1|Border Color|3
+$--border-color-base: #E6E6E6 !default;
+/// color|1|Border Color|3
+$--border-color-light: #F2F2F2 !default;
+
+// Background
+/// color|1|Background Color|4
+$--background-color-base: #F5F5F5 !default;
+
+/// borderRadius|1|Radius|0
+$--border-radius-small: 2px !default;
+
+/// fontWeight|1|Font Weight|1
+$--font-weight-primary: 400 !default;
+
+/// color||Color|0
+$--checkbox-checked-font-color: $--color-text-regular !default;
+
+/// color||Color|0
+$--radio-checked-font-color: $--color-text-regular !default;
+
+/// borderRadius||Border|2
+$--button-border-radius: $--border-radius-small !default;
+
+/// borderRadius||Border|2
+$--button-medium-border-radius: $--border-radius-small !default;
+
+$--button-small-border-radius: $--border-radius-small !default;
+
+$--button-mini-border-radius: 0 !default;
+
+/// color||Color|0
+$--table-header-font-color: $--color-text-regular !default;
+
+/// color||Color|0
+$--pagination-hover-color: $--color-white !default;
+
+$--dropdown-menuItem-hover-fill: #f5f5f5 !default;
+$--dropdown-menuItem-hover-color: $--color-text-regular !default;
