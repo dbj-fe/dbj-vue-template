@@ -97,14 +97,14 @@ a:hover {
 .el-tabs .el-tabs__header {
   margin: 0;
   background: #fff;
-  height: 60px;
+  height: 48px;
   flex: none;
 }
 
 .el-tabs .el-tabs__header .el-tabs__item {
   font-size: 16px;
-  height: 60px;
-  line-height: 60px;
+  height: 48px;
+  line-height: 48px;
 }
 
 .el-tabs .el-tabs__nav-wrap {
@@ -122,7 +122,7 @@ a:hover {
 .el-tabs .el-tabs__nav-next,
 .el-tabs .el-tabs__nav-prev {
   font-size: 20px;
-  line-height: 60px;
+  line-height: 48px;
   width: 40px;
   text-align: center;
 }

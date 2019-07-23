@@ -333,3 +333,24 @@
   width: 100%;
 }
 /*表单中某一项有多个input，并且横向排列 End*/
+
+/*二级tabs的样式 Start*/
+.level2-tabs.el-tabs .el-tabs__active-bar {
+  display: none;
+}
+.level2-tabs.el-tabs .el-tabs__header .el-tabs__item {
+  font-size: 14px;
+}
+
+.level2-tabs.el-tabs .el-tabs__item + .el-tabs__item::before {
+  content: " ";
+  display: inline-block;
+  vertical-align: top;
+  height: 20px;
+  width: 1px;
+  background: #e6e6e6;
+  position: relative;
+  top: 14px;
+  left: -20px;
+}
+/*二级tabs的样式 End*/
