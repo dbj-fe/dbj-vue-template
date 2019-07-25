@@ -20,10 +20,7 @@
       >
         {{ tip }}
       </p>
-      <slot
-        v-if="$slots.append"
-        name="append"
-      />
+      <slot />
     </div>
   </div>
 </template>
