@@ -1328,7 +1328,7 @@
       outline: none;
       border-color: #ffa800; }
   .el-textarea .el-input__count {
-    color: #909399;
+    color: #999999;
     background: #FFFFFF;
     position: absolute;
     font-size: 12px;
@@ -1348,9 +1348,9 @@
     .el-textarea.is-disabled .el-textarea__inner::placeholder {
       color: #CCCCCC; }
   .el-textarea.is-exceed .el-textarea__inner {
-    border-color: #F56C6C; }
+    border-color: #FF5A47; }
   .el-textarea.is-exceed .el-input__count {
-    color: #F56C6C; }
+    color: #FF5A47; }
 
 .el-input {
   position: relative;
@@ -1389,7 +1389,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    color: #909399;
+    color: #999999;
     font-size: 12px; }
     .el-input .el-input__count .el-input__count-inner {
       background: #FFFFFF;
@@ -1481,9 +1481,9 @@
   .el-input.is-disabled .el-input__icon {
     cursor: not-allowed; }
   .el-input.is-exceed .el-input__inner {
-    border-color: #F56C6C; }
+    border-color: #FF5A47; }
   .el-input.is-exceed .el-input__suffix .el-input__count {
-    color: #F56C6C; }
+    color: #FF5A47; }
   .el-input--suffix .el-input__inner {
     padding-right: 30px; }
   .el-input--prefix .el-input__inner {
@@ -1521,7 +1521,7 @@
     display: table-cell; }
   .el-input-group__append, .el-input-group__prepend {
     background-color: #F5F5F5;
-    color: #909399;
+    color: #999999;
     vertical-align: middle;
     display: table-cell;
     position: relative;
@@ -1842,48 +1842,48 @@
       background-color: #ffa800;
       color: #FFFFFF; }
   .el-tag--info {
-    background-color: rgba(144, 147, 153, 0.1);
-    border-color: rgba(144, 147, 153, 0.2);
-    color: #909399; }
+    background-color: rgba(153, 153, 153, 0.1);
+    border-color: rgba(153, 153, 153, 0.2);
+    color: #999999; }
     .el-tag--info.is-hit {
-      border-color: #909399; }
+      border-color: #999999; }
     .el-tag--info .el-tag__close {
-      color: #909399; }
+      color: #999999; }
     .el-tag--info .el-tag__close:hover {
-      background-color: #909399;
+      background-color: #999999;
       color: #FFFFFF; }
   .el-tag--success {
-    background-color: rgba(103, 194, 58, 0.1);
-    border-color: rgba(103, 194, 58, 0.2);
-    color: #67C23A; }
+    background-color: rgba(71, 198, 119, 0.1);
+    border-color: rgba(71, 198, 119, 0.2);
+    color: #47C677; }
     .el-tag--success.is-hit {
-      border-color: #67C23A; }
+      border-color: #47C677; }
     .el-tag--success .el-tag__close {
-      color: #67C23A; }
+      color: #47C677; }
     .el-tag--success .el-tag__close:hover {
-      background-color: #67C23A;
+      background-color: #47C677;
       color: #FFFFFF; }
   .el-tag--warning {
-    background-color: rgba(230, 162, 60, 0.1);
-    border-color: rgba(230, 162, 60, 0.2);
-    color: #E6A23C; }
+    background-color: rgba(255, 126, 67, 0.1);
+    border-color: rgba(255, 126, 67, 0.2);
+    color: #FF7E43; }
     .el-tag--warning.is-hit {
-      border-color: #E6A23C; }
+      border-color: #FF7E43; }
     .el-tag--warning .el-tag__close {
-      color: #E6A23C; }
+      color: #FF7E43; }
     .el-tag--warning .el-tag__close:hover {
-      background-color: #E6A23C;
+      background-color: #FF7E43;
       color: #FFFFFF; }
   .el-tag--danger {
-    background-color: rgba(245, 108, 108, 0.1);
-    border-color: rgba(245, 108, 108, 0.2);
-    color: #F56C6C; }
+    background-color: rgba(255, 90, 71, 0.1);
+    border-color: rgba(255, 90, 71, 0.2);
+    color: #FF5A47; }
     .el-tag--danger.is-hit {
-      border-color: #F56C6C; }
+      border-color: #FF5A47; }
     .el-tag--danger .el-tag__close {
-      color: #F56C6C; }
+      color: #FF5A47; }
     .el-tag--danger .el-tag__close:hover {
-      background-color: #F56C6C;
+      background-color: #FF5A47;
       color: #FFFFFF; }
   .el-tag--medium {
     height: 28px;
@@ -2421,7 +2421,7 @@
   .el-select-group__title {
     padding-left: 20px;
     font-size: 12px;
-    color: #909399;
+    color: #999999;
     line-height: 30px; }
   .el-select-group .el-select-dropdown__item {
     padding-left: 20px; }
@@ -2944,7 +2944,7 @@
   .el-pagination.is-background .btn-next,
   .el-pagination.is-background .el-pager li {
     margin: 0 5px;
-    background-color: #f4f4f5;
+    background-color: whitesmoke;
     color: #333333;
     min-width: 30px;
     border-radius: 2px; }

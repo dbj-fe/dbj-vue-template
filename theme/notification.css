@@ -285,13 +285,13 @@
     .el-notification__closeBtn:hover {
       color: #333333; }
   .el-notification .el-icon-success {
-    color: #67C23A; }
+    color: #47C677; }
   .el-notification .el-icon-error {
-    color: #F56C6C; }
+    color: #FF5A47; }
   .el-notification .el-icon-info {
-    color: #909399; }
+    color: #999999; }
   .el-notification .el-icon-warning {
-    color: #E6A23C; }
+    color: #FF7E43; }
 
 .el-notification-fade-enter.right {
   right: 0;

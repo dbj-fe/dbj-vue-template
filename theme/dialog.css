@@ -432,7 +432,7 @@
     cursor: pointer;
     font-size: 16px; }
     .el-dialog__headerbtn .el-dialog__close {
-      color: #909399; }
+      color: #999999; }
     .el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close {
       color: #ffa800; }
   .el-dialog__title {

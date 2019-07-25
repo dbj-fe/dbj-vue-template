@@ -392,13 +392,13 @@
     padding-right: 0;
     margin-right: 0; }
   .el-progress.is-success .el-progress-bar__inner {
-    background-color: #67C23A; }
+    background-color: #47C677; }
   .el-progress.is-success .el-progress__text {
-    color: #67C23A; }
+    color: #47C677; }
   .el-progress.is-exception .el-progress-bar__inner {
-    background-color: #F56C6C; }
+    background-color: #FF5A47; }
   .el-progress.is-exception .el-progress__text {
-    color: #F56C6C; }
+    color: #FF5A47; }
 
 .el-progress-bar {
   padding-right: 50px;
@@ -671,7 +671,7 @@
     .el-upload-list__item:first-child {
       margin-top: 10px; }
     .el-upload-list__item .el-icon-upload-success {
-      color: #67C23A; }
+      color: #47C677; }
     .el-upload-list__item .el-icon-close {
       display: none;
       position: absolute;

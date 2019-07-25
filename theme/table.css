@@ -999,48 +999,48 @@
       background-color: #ffa800;
       color: #FFFFFF; }
   .el-tag--info {
-    background-color: rgba(144, 147, 153, 0.1);
-    border-color: rgba(144, 147, 153, 0.2);
-    color: #909399; }
+    background-color: rgba(153, 153, 153, 0.1);
+    border-color: rgba(153, 153, 153, 0.2);
+    color: #999999; }
     .el-tag--info.is-hit {
-      border-color: #909399; }
+      border-color: #999999; }
     .el-tag--info .el-tag__close {
-      color: #909399; }
+      color: #999999; }
     .el-tag--info .el-tag__close:hover {
-      background-color: #909399;
+      background-color: #999999;
       color: #FFFFFF; }
   .el-tag--success {
-    background-color: rgba(103, 194, 58, 0.1);
-    border-color: rgba(103, 194, 58, 0.2);
-    color: #67C23A; }
+    background-color: rgba(71, 198, 119, 0.1);
+    border-color: rgba(71, 198, 119, 0.2);
+    color: #47C677; }
     .el-tag--success.is-hit {
-      border-color: #67C23A; }
+      border-color: #47C677; }
     .el-tag--success .el-tag__close {
-      color: #67C23A; }
+      color: #47C677; }
     .el-tag--success .el-tag__close:hover {
-      background-color: #67C23A;
+      background-color: #47C677;
       color: #FFFFFF; }
   .el-tag--warning {
-    background-color: rgba(230, 162, 60, 0.1);
-    border-color: rgba(230, 162, 60, 0.2);
-    color: #E6A23C; }
+    background-color: rgba(255, 126, 67, 0.1);
+    border-color: rgba(255, 126, 67, 0.2);
+    color: #FF7E43; }
     .el-tag--warning.is-hit {
-      border-color: #E6A23C; }
+      border-color: #FF7E43; }
     .el-tag--warning .el-tag__close {
-      color: #E6A23C; }
+      color: #FF7E43; }
     .el-tag--warning .el-tag__close:hover {
-      background-color: #E6A23C;
+      background-color: #FF7E43;
       color: #FFFFFF; }
   .el-tag--danger {
-    background-color: rgba(245, 108, 108, 0.1);
-    border-color: rgba(245, 108, 108, 0.2);
-    color: #F56C6C; }
+    background-color: rgba(255, 90, 71, 0.1);
+    border-color: rgba(255, 90, 71, 0.2);
+    color: #FF5A47; }
     .el-tag--danger.is-hit {
-      border-color: #F56C6C; }
+      border-color: #FF5A47; }
     .el-tag--danger .el-tag__close {
-      color: #F56C6C; }
+      color: #FF5A47; }
     .el-tag--danger .el-tag__close:hover {
-      background-color: #F56C6C;
+      background-color: #FF5A47;
       color: #FFFFFF; }
   .el-tag--medium {
     height: 28px;
@@ -1847,7 +1847,7 @@
     line-height: 34px;
     cursor: pointer; }
     .el-table__column-filter-trigger i {
-      color: #909399;
+      color: #999999;
       font-size: 12px;
       -webkit-transform: scale(0.75);
       transform: scale(0.75); }
