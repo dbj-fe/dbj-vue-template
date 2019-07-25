@@ -56,8 +56,8 @@ export default {
 
 .empty-tip-body img {
   display: block;
-  width: 306px;
-  height: 290px;
+  width: 200px;
+  height: 200px;
 }
 
 .empty-tip-body .title {
