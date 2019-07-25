@@ -1,5 +1,8 @@
 <template>
-  <div class="empty-tip-container">
+  <div
+    v-if="!loading"
+    class="empty-tip-container"
+  >
     <div
       class="empty-tip-body"
       :class="noImg ? 'no-img' : ''"
@@ -28,7 +31,7 @@
 <script>
 export default {
   name: "EmptyTip",
-  props: ["title", "tip", "noImg", "btnText"]
+  props: ["title", "tip", "noImg", "btnText", "loading"]
 };
 </script>
 
