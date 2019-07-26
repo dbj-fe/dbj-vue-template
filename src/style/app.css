@@ -284,6 +284,7 @@
 .detail-info > h2 {
   font-size: 20px;
   margin-bottom: 8px;
+  height: 28px;;
 }
 
 .detail-info-list {
