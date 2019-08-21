@@ -31,7 +31,7 @@
 <script>
 export default {
   name: "EmptyTip",
-  props: ["title", "tip", "noImg", "btnText", "loading"]
+  props: ["title", "tip", "noImg", "loading"]
 };
 </script>
 
