@@ -112,7 +112,7 @@ a:hover {
 }
 
 .el-tabs .el-tabs__nav-wrap.is-scrollable {
-  padding: 0 40px;
+  padding: 0 48px;
 }
 
 .el-tabs .el-tabs__nav-wrap::after {
@@ -125,6 +125,15 @@ a:hover {
   line-height: 48px;
   width: 40px;
   text-align: center;
+}
+
+.el-tabs .el-tabs__nav-next i,
+.el-tabs .el-tabs__nav-prev i {
+  font-size: 14px;
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 50%;
 }
 
 .el-tabs .el-tabs__content {
