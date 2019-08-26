@@ -167,7 +167,6 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  background: #444;
   background-size: cover;
   background-image: url("images/bg-login.svg");
 }
