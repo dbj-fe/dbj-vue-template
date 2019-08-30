@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!loading"
+    v-if="show"
     class="empty-tip-container"
   >
     <div
@@ -29,9 +29,35 @@
 </template>
 
 <script>
+import Bus from "@/Bus";
 export default {
   name: "EmptyTip",
-  props: ["title", "tip", "noImg", "loading"]
+  props: ["title", "tip", "noImg", "loading"],
+  data() {
+    return {
+      show: false
+    };
+  },
+  watch: {
+    loading(val) {
+      if (val === false) {
+        this.show = true;
+      }
+    }
+  },
+  mounted() {
+    Bus.$on("request-finished", this.handleShow);
+  },
+  destroyed() {
+    Bus.$off("request-finished", this.handleShow);
+  },
+  methods: {
+    handleShow() {
+      if (!this.show) {
+        this.show = true;
+      }
+    }
+  }
 };
 </script>
 

@@ -8,6 +8,7 @@
 import { Loading, MessageBox } from '@dbj-fe/element-ui'
 import fetch from 'isomorphic-fetch'
 import * as util from './util'
+import Bus from "../Bus"
 
 export default class http2 {
   static get(url, options = {}, noloading = false, noAutoError = false) {
@@ -68,6 +69,7 @@ function handleResult(data, status, resolve, reject, noAutoError) {
 let errorIsShow = false;
 let loading = null;
 let timeoutClose = null;
+let timeoutFinished = null;
 let requestingList = [];
 
 function createLoading(url) {
@@ -84,6 +86,10 @@ function createLoading(url) {
     clearTimeout(timeoutClose);
     timeoutClose = null;
   }
+  if (timeoutFinished) {
+    clearTimeout(timeoutFinished);
+    timeoutFinished = null;
+  }
   return function () {
     if (timeoutShow) {
       clearTimeout(timeoutShow);
@@ -93,6 +99,10 @@ function createLoading(url) {
       requestingList.splice(requestingList.indexOf(url), 1);
     }
     if (requestingList.length === 0) {
+      timeoutFinished = setTimeout(function () {
+        Bus.$emit('request-finished');
+        timeoutFinished = null;
+      }, 100);
       timeoutClose = setTimeout(function () {
         if (requestingList.length === 0 && loading) {
           loading.close();
