@@ -103,7 +103,7 @@ export default {
       if (this.errorCode === 1 && this.account) {
         this.errorCode = 0;
       }
-      if (this.account && !/^1[34578]\d{9}$/.test(this.account)) {
+      if (this.account && !/^1\d{10}$/.test(this.account)) {
         this.errorCode = 3;
       } else {
         this.errorCode = 0;
@@ -123,7 +123,7 @@ export default {
         this.errorCode = 2;
         return false;
       }
-      if (!/^1[34578]\d{9}$/.test(this.account)) {
+      if (!/^1\d{10}$/.test(this.account)) {
         this.errorCode = 3;
         return false;
       }
