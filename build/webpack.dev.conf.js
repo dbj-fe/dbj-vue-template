@@ -34,7 +34,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     },
     https: {
       key: fs.readFileSync(__dirname + '/cert/local.meiwu365.com.key'),
-      cert: fs.readFileSync(__dirname + '/cert/local.meiwu365.com.crt')
+      cert: fs.readFileSync(__dirname + '/cert/local.meiwu365.com.pem')
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.

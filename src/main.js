@@ -226,6 +226,12 @@ if (params.token) {
           router: createRouter(defaultPath),
           template: '<App :user="user" :company="company" :menus="menus"/>'
         });
+        Vue.prototype.hasPerm = function (permCode) {
+          if (permissionCodes && permissionCodes.length) {
+            return permissionCodes.indexOf(permCode) >= 0;
+          }
+          return false;
+        };
       } else {
         loginView();
       }
