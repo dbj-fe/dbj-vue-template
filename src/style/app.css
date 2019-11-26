@@ -147,6 +147,21 @@
   background: #fff;
 }
 
+.layout-main-header {
+  height: 68px;
+  padding: 0 16px;
+  flex: none;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.layout-main-body {
+  flex: 1;
+  overflow: auto;
+}
+
 .el-dialog .el-form {
   margin: 24px 40px 12px 20px;
 }
