@@ -1,0 +1,8 @@
+
+@import "common/var";
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~@dbj-fe/element-ui/lib/theme-chalk/fonts';
+
+@import "~@dbj-fe/element-ui/packages/theme-chalk/src/index";
+

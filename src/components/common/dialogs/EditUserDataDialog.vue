@@ -27,29 +27,15 @@
         label="头像"
         prop="avatar"
       >
-        <div class="avatar-content">
-          <div class="avatar-wrapper">
-            <img
-              v-if="userForm.avatar"
-              :src="`${userForm.avatar}?x-oss-process=image/resize,m_lfit,h_240,w_240`"
-            >
-            <img
-              v-else
-              src="../../../images/person-black@2x.png"
-            >
-          </div>
-          <uploader
-            type="image"
+        <div>
+          <dbj-upload-image
+            v-model="userForm.avatar"
             :max-size="4*1024*1024"
+            file-type="jpg,png,bmp"
+            btn-text="头像"
             tip="建议使用.jpg、.png、.bmp格式图片，图片不大于4M"
-            @success="uploadImgSuccess"
-          >
-            <a
-              class="avatar-btn"
-              href="javascript:void(0)"
-            >
-              <i class="icon-upload" />上传头像</a>
-          </uploader>
+            @error="msg => $message.error(msg)"
+          />
         </div>
       </el-form-item>
     </el-form>
@@ -69,10 +55,8 @@
 
 <script>
 import { editUserData } from "@/service";
-import Uploader from "@/components/common/Uploader";
 export default {
   name: "EditUserDataDialog",
-  components: { Uploader },
   props: ["name", "avatar"],
   data() {
     return {
@@ -117,45 +101,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.avatar-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.avatar-wrapper {
-  flex: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
-  margin-right: 16px;
-  background: #fafafa;
-}
-.avatar-wrapper img {
-  display: inline-block;
-  max-width: 120px;
-  max-height: 120px;
-}
-.avatar-btn {
-  display: inline-block;
-  font-weight: normal;
-  font-size: 14px;
-  color: #333;
-}
-.avatar-btn:hover {
-  color: #ffa800;
-}
-.avatar-btn:active {
-  color: #ff8a00;
-}
-.avatar-btn i {
-  font-size: 20px;
-  vertical-align: -2px;
-}
-
-.avatar-content >>> .uploader .uploader-tip {
-  line-height: 16px;
-}
-</style>

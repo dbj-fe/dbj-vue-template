@@ -1,31 +1,6 @@
-.search-input {
-  width: 232px;
-}
-
-.search-input .el-button,
-.search-switch-input .el-button {
-  width: 36px;
-}
-
-.search-input .icon-search,
-.search-switch-input .icon-search {
-  font-size: 20px;
-  vertical-align: middle;
-  margin-left: -7px;
-}
-
-.search-switch-input .el-select{
-  vertical-align: middle;
-  width: 110px;
-}
-
-.search-switch-input .el-button.el-button--default.el-button--small,
-.search-input .el-button.el-button--default.el-button--small {
-  min-width: 0;
-}
-
-.search-switch-input .el-input-group__append:hover {
-  background-color: #f5f5f5;
+.el-pagination.is-background {
+  text-align: center;
+  margin: 16px 0;
 }
 
 .ellipsis {
@@ -77,16 +52,20 @@
   align-items: center;
 }
 
-.layout-header-left > * + *,
-.layout-header-left > .el-button + .el-button {
+.layout-header-left>* {
+  margin: 0;
+}
+
+.layout-header-left>*+*,
+.layout-header-left>.el-button+.el-button {
   margin-left: 16px;
 }
 
-.layout-header-left > .el-select {
+.layout-header-left>.el-select {
   width: 140px;
 }
 
-.layout-header-right > * {
+.layout-header-right>* {
   margin-left: 16px;
 }
 
@@ -107,7 +86,7 @@
   overflow: auto;
 }
 
-.layout-body.horizontal{
+.layout-body.horizontal {
   flex-flow: row nowrap;
 }
 
@@ -126,11 +105,11 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: 24px 20px;
+  padding: 20px;
   border-bottom: 1px solid #e6e6e6;
 }
 
-.layout-side-top > :not(:first-child) {
+.layout-side-top> :not(:first-child) {
   margin-top: 16px;
   margin-left: 0;
 }
@@ -141,6 +120,8 @@
 }
 
 .layout-main {
+  display: flex;
+  flex-flow: column nowrap;
   flex: 1;
   height: 100%;
   overflow: auto;
@@ -155,6 +136,7 @@
   flex-flow: row nowrap;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
+  position: relative;
 }
 
 .layout-main-body {
@@ -162,17 +144,23 @@
   overflow: auto;
 }
 
-.el-dialog .el-form {
-  margin: 24px 40px 12px 20px;
-}
-
-.el-dialog .el-form-item__content > * {
-  width: 100%;
-}
-
-.el-button i{
-  font-size: 20px;
+.el-button i {
+  font-size: 18px;
   vertical-align: -2px;
+}
+
+.vertical-line {
+  width: 1px;
+  background: #eee;
+  height: 28px;
+}
+
+.el-dialog .el-form {
+  margin: 24px 40px 24px 20px;
+}
+
+.el-dialog .el-form-item__content>* {
+  width: 100%;
 }
 
 /*List样式 Start*/
@@ -191,6 +179,7 @@
 
 .list-item-pic {
   flex: none;
+  font-size: 0;
 }
 
 .list-item-info {
@@ -219,9 +208,11 @@
 .form-container {
   display: flex;
   flex-flow: column nowrap;
+  height: 100%;
 }
 
 .form-header {
+  flex: none;
   height: 32px;
   padding: 0 16px;
   display: flex;
@@ -236,10 +227,10 @@
 .form-section {
   background: #fff;
   width: 1024px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.03);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .03);
 }
 
-.form-section + .form-section {
+.form-section+.form-section {
   margin-top: 24px;
 }
 
@@ -262,7 +253,7 @@
   padding: 40px 80px 24px 0;
 }
 
-.form-body .el-input{
+.form-body .el-input {
   width: 320px;
 }
 
@@ -270,7 +261,27 @@
   margin: 40px 0 8px;
 }
 
+.el-form--label-top .form-section-body {
+  padding: 40px 64px 24px;
+}
+
 /*Form样式 End*/
+
+/*表单中某一项有多个input，并且横向排列 Start*/
+.form-items-horizonal {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-items-horizonal li+li {
+  margin-left: 12px;
+}
+
+.form-items-horizonal li>.el-input {
+  width: 100%;
+}
+
+/*表单中某一项有多个input，并且横向排列 End*/
 
 /*Detail样式 Start*/
 .detail-container {
@@ -296,7 +307,7 @@
   position: relative;
 }
 
-.detail-info > h2 {
+.detail-info>h2 {
   font-size: 20px;
   margin-bottom: 8px;
   height: 28px;
@@ -313,7 +324,62 @@
   flex-flow: row nowrap;
 }
 
-.detail-info-list.horizonal > li + li:before {
+.detail-info-list.horizonal>li+li:before {
+  content: " ";
+  flex: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 14px;
+  width: 1px;
+  background: #e6e6e6;
+  margin: 0 16px;
+}
+
+.detail-info-btns {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.detail-body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 0;
+}
+
+/*Detail样式 End*/
+
+/*表单中某一项有多个input，并且横向排列 Start*/
+.form-items-horizonal {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form-items-horizonal li+li {
+  margin-left: 12px;
+}
+
+/*表单中某一项有多个input，并且横向排列 End*/
+
+.detail-info-list {
+  color: #999;
+  line-height: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.detail-info-list.horizonal {
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.detail-info-list.horizonal>li {
+  display: flex;
+  align-items: center;
+}
+
+.detail-info-list.horizonal>li+li:before {
   content: " ";
   display: inline-block;
   vertical-align: middle;
@@ -329,44 +395,61 @@
   top: 20px;
 }
 
-.detail-body {
-  flex: 1;
+/*Form样式 Start*/
+
+.form-container {
   display: flex;
   flex-flow: column nowrap;
 }
-/*Detail样式 End*/
-/*表单中某一项有多个input，并且横向排列 Start*/
-.form-items-horizonal {
+
+.form-header {
+  height: 32px;
+  padding: 0 16px;
   display: flex;
-  flex-flow: row nowrap;
+  align-items: center;
+  background: #fff;
 }
 
-.form-items-horizonal li + li {
+.form-body {
+  padding: 16px 32px;
+}
+
+.form-section {
+  background: #fff;
+  width: 1024px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .03);
+}
+
+.form-section+.form-section {
+  margin-top: 16px;
+}
+
+.form-section-header {
+  height: 48px;
+  background: #fcfcfc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.form-section-header .tip {
+  font-size: 12px;
+  color: #999;
   margin-left: 12px;
 }
 
-.form-items-horizonal li > .el-input {
-  width: 100%;
-}
-/*表单中某一项有多个input，并且横向排列 End*/
-
-/*二级tabs的样式 Start*/
-.level2-tabs.el-tabs .el-tabs__active-bar {
-  display: none;
-}
-.level2-tabs.el-tabs .el-tabs__header .el-tabs__item {
-  font-size: 14px;
+.form-section-body {
+  padding: 40px 80px 24px 0;
 }
 
-.level2-tabs.el-tabs .el-tabs__item + .el-tabs__item::before {
-  content: " ";
-  display: inline-block;
-  vertical-align: top;
-  height: 20px;
-  width: 1px;
-  background: #e6e6e6;
-  position: relative;
-  top: 14px;
-  left: -20px;
+.form-body .el-input {
+  width: 320px;
 }
-/*二级tabs的样式 End*/
+
+.form-btns-wrapper {
+  margin: 40px 0 8px;
+}
+
+/*Form样式 End*/
+

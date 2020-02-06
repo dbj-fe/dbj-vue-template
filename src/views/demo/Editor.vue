@@ -15,13 +15,14 @@
           v-model="content"
           :config="editorOpts"
         />
-        <uploader
+        <dbj-upload
+          v-model="imageUrl"
           style="display:none;"
           type="image"
-          @success="uploadImgSuccess"
+          @error="$message.error"
         >
           <span id="editorUploader" />
-        </uploader>
+        </dbj-upload>
       </div>
       <div class="form-btns-wrapper">
         <el-button
@@ -37,13 +38,12 @@
 </template>
 
 <script>
-import Uploader from "@/components/common/Uploader";
 export default {
   name: "EditorDemo",
-  components: { Uploader },
   data() {
     return {
       content: "",
+      imageUrl: "",
       editorOpts: {
         placeholder: "请输入文字",
         theme: "snow"
@@ -61,11 +61,10 @@ export default {
         document.getElementById("editorUploader").click();
       });
     },
-    uploadImgSuccess(serverUrl, fileKey, size) {
+    uploadImgSuccess() {
       let editor = this.$refs.textEditor.quill;
       let cursorPos = editor.getSelection().index;
-      let url = serverUrl + fileKey;
-      editor.insertEmbed(cursorPos, "image", url);
+      editor.insertEmbed(cursorPos, "image", this.imageUrl);
       editor.setSelection(cursorPos + 1);
     },
     save() {

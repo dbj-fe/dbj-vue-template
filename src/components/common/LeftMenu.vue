@@ -33,15 +33,13 @@
           />
           <span>{{ menu.title }}</span>
         </template>
-        <el-menu-item-group>
-          <el-menu-item
-            v-for="(sub, idx2) in menu.children"
-            :key="`${idx}-${idx2}`"
-            :index="sub.path"
-          >
-            <span>{{ sub.title }}</span>
-          </el-menu-item>
-        </el-menu-item-group>
+        <el-menu-item
+          v-for="(sub, idx2) in menu.children"
+          :key="`${idx}-${idx2}`"
+          :index="sub.path"
+        >
+          <span>{{ sub.title }}</span>
+        </el-menu-item>
       </el-submenu>
     </template>
   </el-menu>
@@ -86,7 +84,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "~@/style/common/var";
+
 .font24 {
   font-size: 24px;
 }
@@ -106,13 +106,13 @@ export default {
   top: 0;
   width: 4px;
   height: 100%;
-  background: #ffa800;
+  background: $--color-primary;
 }
 .el-menu-item span,
 .el-submenu span {
   margin-left: 12px;
 }
-.el-menu-item-group .el-menu-item span {
+.el-submenu > .el-menu--inline > .el-menu-item > span {
   margin-left: 20px;
 }
 </style>

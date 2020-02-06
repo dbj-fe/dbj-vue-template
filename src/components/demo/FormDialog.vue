@@ -43,11 +43,19 @@
           </el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="预览图">
-        <uploader
-          type="image"
-          tip="建议使用320*240的.jpg、.png、.bmp格式图片，图片不大于1M"
-        />
+      <el-form-item
+        label="预览图"
+        prop="previewUrl"
+      >
+        <div>
+          <dbj-upload-image
+            v-model="formData.previewUrl"
+            :max-size="1*1024*1024"
+            file-type="jpg,png"
+            tip="建议使用320*240的.jpg、.png格式图片，图片不大于1M"
+            @error="$message.error"
+          />
+        </div>
       </el-form-item>
       <el-form-item
         label="说明"
@@ -77,10 +85,8 @@
 </template>
 
 <script>
-import Uploader from "@/components/common/Uploader";
 export default {
   name: "FormDialog",
-  components: { Uploader },
   data() {
     return {
       formData: {
@@ -88,6 +94,7 @@ export default {
         name: "",
         code: "",
         isEnabled: 1,
+        previewUrl: "",
         remarks: ""
       },
       formRules: {
@@ -103,6 +110,7 @@ export default {
             trigger: "blur"
           }
         ],
+        previewUrl: [{ required: true, message: "请上传预览图" }],
         remarks: [
           {
             required: false,

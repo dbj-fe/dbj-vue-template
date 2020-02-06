@@ -9,6 +9,7 @@
     "plugin:vue/recommended"
   ],
   "globals": {
+    "require": "readonly",
     "scrollToTop": "readonly",
     "scrollToPosition": "readonly"
   },

@@ -5,8 +5,11 @@
  * http请求发送工具类。
  *
  */
+import Vue from 'vue';
 import { Loading, MessageBox } from '@dbj-fe/element-ui'
-import fetch from 'isomorphic-fetch'
+import ReloginDialog from "../components/common/dialogs/ReloginDialog"
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import * as util from './util'
 import Bus from "../Bus"
 
@@ -27,6 +30,8 @@ export default class http2 {
     return makeAPromise(url, notJson ? util.parseQuerystring(options) : JSON.stringify(options), 'PUT', noloading, noAutoError, notJson);
   }
 }
+
+var reloginDialog = null;
 
 function handleResult(data, status, resolve, reject, noAutoError) {
   let errMsg = "";
@@ -51,6 +56,17 @@ function handleResult(data, status, resolve, reject, noAutoError) {
   } else {
     resolve(data);
   }
+  if (status === 401 && !noAutoError) {
+    if (!reloginDialog) {
+      reloginDialog = new (Vue.extend(ReloginDialog))();
+      reloginDialog.$mount();
+      reloginDialog.$on('close', function (e) {
+        reloginDialog.$destroy();
+        reloginDialog = null;
+      })
+    }
+    return;
+  }
   if (errMsg) {
     data.then(d => {
       if (!noAutoError) {
@@ -61,7 +77,7 @@ function handleResult(data, status, resolve, reject, noAutoError) {
       if (!noAutoError) {
         showError(errMsg);
       }
-      reject([{ message: errMsg }, status]);
+      reject([e, status]);
     });
   }
 }
@@ -78,7 +94,7 @@ function createLoading(url) {
   if (!loading) {
     timeoutShow = setTimeout(function () {
       if (requestingList.length > 0 && !loading) {
-        loading = Loading.service({ fullscreen: false, text: '数据加载中，请稍候...' })
+        loading = Loading.service({ fullscreen: true, text: '数据加载中，请稍候...' })
       }
     }, 300);
   }
@@ -177,10 +193,12 @@ function makeAPromise(url, body, method, noloading, noAutoError, notJson) {
         })
       } else {
         //其他请求直接reject
-        reject([{
-          code: "REPEAT_REQUEST",
-          message: "重复请求"
-        }, 400])
+        reject({
+          error: {
+            code: "REPEAT_REQUEST",
+            message: "重复请求"
+          }
+        })
       }
     } else {
       requestingList2.push({
@@ -216,9 +234,6 @@ function doRequest(url, body, method, noloading, notJson) {
       "Accept": "application/json"
     }
   };
-  if (/^(http|https):\/\//.test(url2)) {
-    params.mode = 'cors';
-  }
   if (method === 'GET') {
     url2 = url.indexOf('?') > 0 ?
       encodeURI(url) + '&'
@@ -252,11 +267,7 @@ function doRequest(url, body, method, noloading, notJson) {
     let request = popRequest(url, body, method);
     if (request && request.handlers) {
       request.handlers.forEach((handler) => {
-        if (request.noAutoError) {
-          handler.reject([{ code: "UNKOWN_ERROR", message: "程序异常，请稍候重试！" }, 403]);
-        } else {
-          showError("程序异常，请稍候重试！");
-        }
+        showError("程序异常，请稍候重试！");
       })
     } else {
       console && console.error('http request error:Can not find the request or handlers');

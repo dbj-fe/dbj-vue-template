@@ -9,10 +9,12 @@
     :expand-on-click-node="false"
     highlight-current
     @current-change="currentChange"
+    @node-click="handleNodeClick"
   >
     <div
       slot-scope="{data: nodeData, node}"
       class="opertree-node"
+      :class="getNodeClasses(nodeData, node)"
     >
       <div class="opertree-node-label">
         <slot
@@ -23,7 +25,7 @@
         />
         <img
           v-else-if="!noImg"
-          src="../../images/folder.png"
+          src="@/images/folder.png"
         >
         <p
           v-if="!nodeData.isEditing"
@@ -44,6 +46,11 @@
         v-if="!noOper && (nodeData.noOper !== true) && !nodeData.isEditing"
         class="opertree-node-oper"
       >
+        <slot
+          name="operIcon"
+          :data="nodeData"
+          :node="node"
+        />
         <el-popover
           placement="bottom-end"
           :offset="5"
@@ -127,7 +134,15 @@
 const NEW_NODE_ID = -10;
 export default {
   name: "OperTree",
-  props: ["data", "props", "operBtns", "addChildBtnText", "maxLevel", "noImg"],
+  props: [
+    "data",
+    "props",
+    "operBtns",
+    "addChildBtnText",
+    "maxLevel",
+    "noImg",
+    "nodeClassName"
+  ],
   data() {
     return {
       inputOrginalValue: "",
@@ -153,7 +168,11 @@ export default {
       return this.operBtns || [];
     },
     noOper() {
-      return !this.opBtns.length && !this.$scopedSlots.operBtns;
+      return (
+        !this.opBtns.length &&
+        !this.$scopedSlots.operBtns &&
+        !this.$scopedSlots.operIcon
+      );
     }
   },
   methods: {
@@ -276,7 +295,10 @@ export default {
         return false;
       }
       const index = children.findIndex(d => d.id === data.id);
-      return index < children.length - 1;
+      if (index === children.length - 1) {
+        return false;
+      }
+      return !children[index + 1].noOper;
     },
     currentChange(data, node) {
       if (data.id != this.currentNodeKey) {
@@ -284,10 +306,17 @@ export default {
         this.currentNodeKey = data.id;
       }
     },
+    handleNodeClick(data, node, item) {
+      this.$emit("node-click", data, node, item);
+      this.currentNodeKey = data.id;
+    },
     setCurrentKey(nodeKey) {
       this.$nextTick(() => {
         this.currentNodeKey = nodeKey;
         this.$refs.opertree.setCurrentKey(nodeKey);
+        if (nodeKey) {
+          this.expandParents(nodeKey);
+        }
       });
     },
     expandParents(nodeKey) {
@@ -300,6 +329,16 @@ export default {
           }
         }
       });
+    },
+    getNodeClasses(data, node) {
+      switch (typeof this.nodeClassName) {
+        case "undefined":
+          return;
+        case "string":
+          return this.nodeClassName;
+        case "function":
+          return this.nodeClassName(data, node);
+      }
     }
   }
 };
@@ -355,6 +394,36 @@ export default {
   margin-right: 8px;
   margin-top: 8px;
 }
+.opertree-node-label p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 8px;
+  margin-right: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 110px;
+  overflow: hidden;
+}
+
+.opertree.el-tree
+  .el-tree-node
+  .el-tree-node__children
+  .el-tree-node__content
+  .opertree-node-label
+  p {
+  width: 100px;
+}
+
+.opertree.el-tree
+  .el-tree-node
+  .el-tree-node__children
+  .el-tree-node__children
+  .el-tree-node__content
+  .opertree-node-label
+  p {
+  width: 80px;
+}
+
 .opertree.el-tree--highlight-current
   .el-tree-node.is-current
   > .el-tree-node__content {

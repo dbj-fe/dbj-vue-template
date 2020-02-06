@@ -41,10 +41,9 @@
           class="list-item"
         >
           <div class="list-item-pic">
-            <pic
+            <el-image
               :src="item.img"
-              :width="160"
-              :height="160"
+              size="small"
             />
           </div>
           <div class="list-item-info">
@@ -85,11 +84,9 @@
 </template>
 
 <script>
-import Pic from "@/components/common/Pic";
 import queryMixin from "@/utils/queryMixin";
 export default {
   name: "DemoList",
-  components: { Pic },
   mixins: [queryMixin],
   data() {
     return {

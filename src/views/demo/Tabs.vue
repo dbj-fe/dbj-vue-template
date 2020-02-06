@@ -2,39 +2,35 @@
   <el-tabs value="home">
     <el-tab-pane
       key="home"
-      label="选项1"
+      label="空页面1"
       name="home"
     >
-      <empty-tip
+      <dbj-empty
         title="没有数据"
         tip="请刷新后重试"
       />
     </el-tab-pane>
     <el-tab-pane
       key="impression"
-      label="选项2"
+      label="空页面2"
       name="impression"
     >
-      <empty-tip title="没有数据">
-        <el-button
-          slot="append"
-          icon="icon-new"
-          type="primary"
-        >
-          创建数据
-        </el-button>
-      </empty-tip>
+      <dbj-empty
+        v-requested
+        title="没有数据"
+        tip="有v-requested时，在ajax请求完成后才会显示"
+      />
     </el-tab-pane>
     <el-tab-pane
       key="pano"
-      label="选项3"
+      label="tab内部可以嵌套表格结构"
       name="pano"
     >
       <demo-table />
     </el-tab-pane>
     <el-tab-pane
       key="build"
-      label="选项4"
+      label="tab内部可以嵌套列表结构"
       name="build"
     >
       <demo-list />
@@ -43,13 +39,11 @@
 </template>
 
 <script>
-import EmptyTip from "@/components/common/EmptyTip";
 import DemoTable from "@/views/demo/Table";
 import DemoList from "@/views/demo/List";
 export default {
   name: "DemoTabs",
   components: {
-    EmptyTip,
     DemoTable,
     DemoList
   },

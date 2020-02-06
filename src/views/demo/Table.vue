@@ -27,55 +27,13 @@
         </el-select>
       </div>
       <div class="layout-header-right">
-        <!-- 搜索框组件 -->
-        <el-input
+        <dbj-search-input
           v-model="keyword"
-          class="search-input"
-          placeholder="请输入姓名／电话／职务"
+          :type.sync="keywordType"
+          :types="keywordTypes"
           clearable
-          @keydown.enter.native="searchPage"
-        >
-          <el-button
-            slot="append"
-            icon="icon-search"
-            @click="searchPage"
-          />
-        </el-input>
-        <!-- 带切换类型的搜索框组件 -->
-        <el-input
-          v-model="keyword"
-          class="search-switch-input"
-          :placeholder="switchSearchPlaceholder"
-          clearable
-          @keydown.enter.native="searchPage"
-        >
-          <el-select
-            slot="prepend"
-            v-model="keywordType"
-          >
-            <el-option
-              label="全部"
-              :value="0"
-            />
-            <el-option
-              label="项目名称"
-              :value="1"
-            />
-            <el-option
-              label="业主信息"
-              :value="2"
-            />
-            <el-option
-              label="创建人"
-              :value="3"
-            />
-          </el-select>
-          <el-button
-            slot="append"
-            icon="icon-search"
-            @click="searchPage"
-          />
-        </el-input>
+          @search="searchPage"
+        />
       </div>
     </div>
     <div class="layout-body horizontal">
@@ -143,37 +101,67 @@
         </div>
       </div>
       <div class="layout-main">
-        <el-table
-          :data="tableData"
-          size="medium"
-          height="100%"
-          style="width: 100%"
-        >
-          <el-table-column
-            prop="date"
-            label="日期"
-            width="180"
-          />
-          <el-table-column
-            prop="name"
-            label="姓名"
-            width="180"
-          />
-          <el-table-column
-            prop="address"
-            label="地址"
-          />
-          <el-pagination
-            v-if="pageTotal > pageSize"
-            slot="append"
-            background
-            layout="prev, pager, next, jumper"
-            :current-page="pageNum"
-            :total="pageTotal"
-            :page-size="pageSize"
-            @current-change="getPage"
-          />
-        </el-table>
+        <div class="layout-main-header">
+          <div class="layout-header-left">
+            <el-select
+              v-model="isEnabled"
+              @change="searchPage"
+            >
+              <el-option
+                label="全部状态"
+                :value="-1"
+              />
+              <el-option
+                label="启用"
+                :value="1"
+              />
+              <el-option
+                label="停用"
+                :value="0"
+              />
+            </el-select>
+          </div>
+          <div class="layout-header-right">
+            <dbj-search-input
+              v-model="keyword"
+              placeholder="请输入关键字"
+              @search="searchPage"
+            />
+          </div>
+        </div>
+        <div class="layout-main-body">
+          <el-table
+            :data="tableData"
+            size="medium"
+            height="100%"
+            style="width: 100%"
+          >
+            <el-table-column
+              prop="date"
+              label="日期"
+              width="180"
+            />
+            <el-table-column
+              prop="name"
+              label="姓名"
+              width="180"
+            />
+            <el-table-column
+              prop="address"
+              label="地址"
+            />
+            <el-pagination
+              v-if="pageTotal > pageSize"
+              slot="append"
+              background
+              layout="prev, pager, next, jumper"
+              :current-page="pageNum"
+              :total="pageTotal"
+              :page-size="pageSize"
+              @current-change="getPage"
+            />
+          </el-table>
+        </div>
       </div>
     </div>
   </div>
@@ -196,7 +184,26 @@ export default {
     return {
       select1: "",
       keyword: "",
-      keywordType: 1,
+      isEnabled: -1,
+      keywordType: -1,
+      keywordTypes: [
+        {
+          value: -1,
+          label: "全部"
+        },
+        {
+          value: 1,
+          label: "业主信息"
+        },
+        {
+          value: 2,
+          label: "项目名称"
+        },
+        {
+          value: 3,
+          label: "项目编码"
+        }
+      ],
       treeProps: {
         label: "name",
         children: "list"
